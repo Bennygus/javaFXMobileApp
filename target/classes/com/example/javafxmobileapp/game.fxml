@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.GameController">
+   <bottom>
+      <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" text="Button" />
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <BorderPane prefHeight="81.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="60.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="335.0" style="-fx-background-color: grey;" text="Rock, Paper, Scissors">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox prefHeight="60.0" prefWidth="336.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="60.0" prefWidth="336.0">
+                     <children>
+                        <Pane id="BorderPaneLeft" fx:id="PaneLeftForScore" layoutY="-1.0" prefHeight="61.0" prefWidth="74.0" style="-fx-background-color: black; -fx-border-color: red;">
+                           <children>
+                              <Text id="TextOnLeftPaneForScore" fx:id="TextOnLeftPaneForScore" layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                                 <fill>
+                                    <RadialGradient centerX="0.3674033149171271" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9882352948188782" green="0.3960784375667572" blue="0.3960784375667572" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </RadialGradient>
+                                 </fill>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="74.0" layoutY="-3.0" prefHeight="63.0" prefWidth="187.0" style="-fx-background-color: grey;">
+                           <children>
+                              <Label id="LabelForPlayerOneAtScore" fx:id="LabelForPlayerOneAtScore" layoutX="14.0" layoutY="23.0" prefHeight="17.0" prefWidth="72.0" text="You" />
+                              <Label id="LabelForPlayerTwoAtScore" fx:id="LabelForPlayerTwoAtScore" layoutX="134.0" layoutY="23.0" prefHeight="17.0" prefWidth="43.0" text="Comp" />
+                           </children></Pane>
+                        <Pane layoutX="261.0" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: black; -fx-border-color: red;">
+                           <children>
+                              <Text id="TextOnRightPaneForScore" fx:id="TextOnRightPaneForScore" layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                                 <fill>
+                                    <RadialGradient centerX="0.6215469613259669" centerY="0.514218009478673" cycleMethod="REFLECT" radius="0.5">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color opacity="0.350649356842041" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.9868420958518982" green="0.33808478713035583" blue="0.33808478713035583" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </RadialGradient>
+                                 </fill>
+                              </Text>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </top>
+   <center>
+      <BorderPane prefHeight="191.0" prefWidth="336.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="70.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="ButtonForRock" fx:id="ButtonForRock" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" text="Rock">
+                     <HBox.margin>
+                        <Insets left="7.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="ButtonForPaper" fx:id="ButtonForPaper" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" text="Paper">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="ButtonForScissor" fx:id="ButtonForScissor" mnemonicParsing="false" prefHeight="66.0" prefWidth="100.0" text="Scissor">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="249.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label id="LabelForPlayerOneChoice" fx:id="LabelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text="you played Scissor" />
+                  <Label id="LabelForPlayerTwoChoice" fx:id="LabelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text="comp played Paper" />
+                  <Label id="LabelForWinner" fx:id="LabelForWinner" alignment="CENTER" layoutX="133.0" layoutY="135.0" prefHeight="17.0" prefWidth="70.0" text="YOU WIN!" />
+                  <ImageView id="ImageViewForPlayerOneChoice" fx:id="ImageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../invite_friend.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="ImageViewForPlayerTwoChoice" fx:id="ImageViewForPlayerTwoChoice" fitHeight="55.0" fitWidth="55.0" layoutX="238.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pngwing.com.png" />
+                     </image>
+                  </ImageView>
+                  <Button id="ButttonForChanging" fx:id="ButtonForChanging" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="212.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea id="TextAreaForRecieving" fx:id="TextAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
+                  <TextArea id="TextAreaForMessage" fx:id="TextAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
+                  <Button id="ButtonForSendingMessage" fx:id="ButtonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="97.0" text="Send Message" onAction="#sendMessageToPlayer" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>
