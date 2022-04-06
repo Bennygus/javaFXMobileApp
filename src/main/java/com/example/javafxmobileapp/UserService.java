@@ -13,6 +13,10 @@ public interface UserService {
     Call<Text> getGreeting();
 
 
+    //TODO fix Same in DB
+    @POST("/game")
+    Call<Game> createGame(
+            @Body Game game);
 
     @POST("/users")
     Call<User> createUsers(
@@ -20,8 +24,8 @@ public interface UserService {
 
 
 
-    @GET("/users/{username}")
-    public Call<User> getUser(@Path("username") String username);
+//    @GET("/users/{username}")
+//    public Call<User> getUser(@Path("username") String username);
 
 
 

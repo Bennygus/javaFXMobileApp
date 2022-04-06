@@ -81,7 +81,7 @@
                                     <Font size="40.0" />
                                  </font>
                                  <fill>
-                                    <RadialGradient centerX="0.3674033149171271" centerY="0.5" radius="0.5">
+                                    <RadialGradient centerY="0.5" radius="0.5">
                                        <stops>
                                           <Stop>
                                              <color>
@@ -111,7 +111,7 @@
                                     <Font size="40.0" />
                                  </font>
                                  <fill>
-                                    <RadialGradient centerX="0.6215469613259669" centerY="0.514218009478673" cycleMethod="REFLECT" radius="0.5">
+                                    <RadialGradient centerX="1.0" centerY="0.514218009478673" cycleMethod="REFLECT" radius="0.5">
                                        <stops>
                                           <Stop>
                                              <color>
@@ -141,17 +141,17 @@
          <top>
             <HBox prefHeight="70.0" prefWidth="335.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="ButtonForRock" fx:id="ButtonForRock" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" text="Rock">
+                  <Button id="ButtonForRock" fx:id="ButtonForRock" mnemonicParsing="false" onAction="#ClickOnRockButton" prefHeight="65.0" prefWidth="100.0" text="Rock">
                      <HBox.margin>
                         <Insets left="7.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="ButtonForPaper" fx:id="ButtonForPaper" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" text="Paper">
+                  <Button id="ButtonForPaper" fx:id="ButtonForPaper" mnemonicParsing="false" onAction="#ClickOnPaperButton" prefHeight="65.0" prefWidth="100.0" text="Paper">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="ButtonForScissor" fx:id="ButtonForScissor" mnemonicParsing="false" prefHeight="66.0" prefWidth="100.0" text="Scissor">
+                  <Button id="ButtonForScissor" fx:id="ButtonForScissor" mnemonicParsing="false" onAction="#ClickOnScissorButton" prefHeight="66.0" prefWidth="100.0" text="Scissor">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
@@ -164,7 +164,7 @@
                <children>
                   <Label id="LabelForPlayerOneChoice" fx:id="LabelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text="you played Scissor" />
                   <Label id="LabelForPlayerTwoChoice" fx:id="LabelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text="comp played Paper" />
-                  <Label id="LabelForWinner" fx:id="LabelForWinner" alignment="CENTER" layoutX="133.0" layoutY="135.0" prefHeight="17.0" prefWidth="70.0" text="YOU WIN!" />
+                  <Label id="LabelForWinner" fx:id="LabelForWinner" alignment="CENTER" layoutX="133.0" layoutY="135.0" opacity="0.0" prefHeight="17.0" prefWidth="70.0" text="YOU WIN!" />
                   <ImageView id="ImageViewForPlayerOneChoice" fx:id="ImageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../invite_friend.png" />
@@ -175,7 +175,7 @@
                         <Image url="@../../../pngwing.com.png" />
                      </image>
                   </ImageView>
-                  <Button id="ButttonForChanging" fx:id="ButtonForChanging" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
+                  <Button id="ButtonForChanging" fx:id="ButtonForChanging" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
                </children>
             </AnchorPane>
          </center>
@@ -184,7 +184,7 @@
                <children>
                   <TextArea id="TextAreaForRecieving" fx:id="TextAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
                   <TextArea id="TextAreaForMessage" fx:id="TextAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
-                  <Button id="ButtonForSendingMessage" fx:id="ButtonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="97.0" text="Send Message" onAction="#sendMessageToPlayer" />
+                  <Button id="ButtonForSendingMessage" fx:id="ButtonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" onAction="#sendMessageToPlayer" prefHeight="42.0" prefWidth="97.0" text="Send Message" />
                </children>
             </AnchorPane>
          </bottom>

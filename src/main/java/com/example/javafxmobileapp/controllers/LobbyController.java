@@ -2,11 +2,12 @@ package com.example.javafxmobileapp.controllers;
 
 import com.example.javafxmobileapp.SuperController;
 import javafx.event.ActionEvent;
-import javafx.stage.Stage;
 
 public class LobbyController extends SuperController {
 
-    public void toGameScreen(ActionEvent event){
+    public void gameAgainstComp(ActionEvent event){
+
+
         changeScene("game.fxml");
 
     }

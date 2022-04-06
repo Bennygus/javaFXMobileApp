@@ -51,7 +51,7 @@
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
             <Button id="ButtonGoBackToLobby" mnemonicParsing="false" onAction="#ButtonBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Go Back" />
-            <Button id="ButtonSendInvite" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" text="Send">
+            <Button id="ButtonForSendInvite" fx:id="ButtonForSendInvite" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" text="Send" onAction="#ButtonForSendingInvite">
                <HBox.margin>
                   <Insets left="115.0" />
                </HBox.margin>
@@ -123,7 +123,7 @@
                   </Label>
                </center>
                <right>
-                  <ImageView id="ImageViewForinviteFriendImage" fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <ImageView id="ImageViewForInviteFriendImage" fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
                         <Image url="@../../../invite_friend.png" />
                      </image>
