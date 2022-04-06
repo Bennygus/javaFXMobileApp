@@ -22,6 +22,8 @@ public class GameController extends SuperController {
     Game game = new Game();
 
 
+
+
     //Top
 
     public Pane PaneLeftForScore;
@@ -37,53 +39,7 @@ public class GameController extends SuperController {
     @FXML
     public Button ButtonForScissor;
 
-    public void match(){
 
-        LabelForWinner.setOpacity(1);
-
-        if (game.getChoiceOne().equals(game.getChoiceTwo())){ System.out.println("TIE");
-
-            LabelForWinner.setText("TIE!");}
-
-
-       else if (game.getChoiceOne().equals(ROCK)){
-            if (game.getChoiceTwo().equals(PAPER)) {
-
-                LabelForWinner.setText(game.getPlayerTwo() +
-                        " wins");
-                TextOnRightPaneForScore.setText("1");
-
-            } else {
-                LabelForWinner.setText(game.getPlayerOne() + " wins");
-                TextOnLeftPaneForScore.setText("1");
-            }
-
-        }
-      else if (game.getChoiceOne().equals(PAPER)){
-            if (game.getChoiceTwo().equals(SCISSOR)) {
-                LabelForWinner.setText(game.getPlayerTwo() +
-                        " wins");
-                TextOnRightPaneForScore.setText("1");
-
-            } else {
-                LabelForWinner.setText(game.getPlayerOne() + " wins");
-                TextOnLeftPaneForScore.setText("1");
-            }
-
-        }
-
-        else if (game.getChoiceOne().equals(SCISSOR)){
-            if (game.getChoiceTwo().equals(ROCK)) {
-                LabelForWinner.setText(game.getPlayerTwo() +
-                        " wins");
-                TextOnRightPaneForScore.setText("1");
-
-            } else {
-                LabelForWinner.setText(game.getPlayerOne() + " wins");
-                TextOnLeftPaneForScore.setText("1");
-            }
-
-        }
 
 
 //        else if (game.getChoiceOne().equals(choicePlayerOne)){
@@ -97,10 +53,6 @@ public class GameController extends SuperController {
 
 
 
-
-
-    }
-
 //    public void ClickOnRockButton(ActionEvent event) {
 //        if (RetroFitServiceGenerator.userName.equals()) game.setChoiceOne(ROCK); {
 //            try {
@@ -112,32 +64,7 @@ public class GameController extends SuperController {
 //
 //        }
 //    }
-    public void ClickOnPaperButton(ActionEvent event) {
 
-        if (game.getPlayerOne().equals("1")) game.setChoiceOne(PAPER); {
-            try {
-                match();
-            }
-            catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-
-        }
-
-    }
-
-    public void ClickOnScissorButton(ActionEvent event) {
-        if (game.getPlayerOne().equals("1")) game.setChoiceOne(SCISSOR); {
-            try {
-                match();
-            }
-            catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-
-        }
-
-    }
 
 
 
@@ -163,6 +90,11 @@ public class GameController extends SuperController {
     @FXML
     public Button ButtonForSendingMessage;
 
+    //för över vald game
+    public void initialize(){
+
+        game = (Game) this.getObject();
+    }
 
 
     //TODO better code
@@ -192,6 +124,88 @@ public class GameController extends SuperController {
         TextAreaForReceiving.setText(TextAreaForMessage.getText());
         TextAreaForMessage.setText("");
 
+
+    }
+
+//------------
+public void match(){
+
+    LabelForWinner.setOpacity(1);
+
+    if (game.getChoiceOne().equals(game.getChoiceTwo())){ System.out.println("TIE");
+
+        LabelForWinner.setText("TIE!");}
+
+
+    else if (game.getChoiceOne().equals(ROCK)){
+        if (game.getChoiceTwo().equals(PAPER)) {
+
+            LabelForWinner.setText(game.getPlayerTwo() +
+                    " wins");
+            TextOnRightPaneForScore.setText("1");
+
+        } else {
+            LabelForWinner.setText(game.getPlayerOne() + " wins");
+            TextOnLeftPaneForScore.setText("1");
+        }
+
+    }
+    else if (game.getChoiceOne().equals(PAPER)){
+        if (game.getChoiceTwo().equals(SCISSOR)) {
+            LabelForWinner.setText(game.getPlayerTwo() +
+                    " wins");
+            TextOnRightPaneForScore.setText("1");
+
+        } else {
+            LabelForWinner.setText(game.getPlayerOne() + " wins");
+            TextOnLeftPaneForScore.setText("1");
+        }
+
+    }
+
+    else if (game.getChoiceOne().equals(SCISSOR)){
+        if (game.getChoiceTwo().equals(ROCK)) {
+            LabelForWinner.setText(game.getPlayerTwo() +
+                    " wins");
+            TextOnRightPaneForScore.setText("1");
+
+        } else {
+            LabelForWinner.setText(game.getPlayerOne() + " wins");
+            TextOnLeftPaneForScore.setText("1");
+        }
+
+    }
+
+
+
+
+
+}
+
+    public void ClickOnPaperButton(ActionEvent event) {
+
+        if (game.getPlayerOne().equals("1")) game.setChoiceOne(PAPER); {
+            try {
+
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
+        }
+
+    }
+
+    public void ClickOnScissorButton(ActionEvent event) {
+        if (game.getPlayerOne().equals("1")) game.setChoiceOne(SCISSOR); {
+            try {
+
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
+        }
 
     }
 

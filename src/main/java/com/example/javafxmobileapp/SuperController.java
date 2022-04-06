@@ -9,6 +9,15 @@ import java.io.IOException;
 public class SuperController {
 
     private Stage stage;
+    private Object object;
+
+    public Object getObject() {
+        return object;
+    }
+
+    public void setObject(Object object) {
+        this.object = object;
+    }
 
     public Stage getStage() {
         return stage;
@@ -31,5 +40,25 @@ public class SuperController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+    }
+
+
+    public void changeScene(String viewName,Object dataObject) {
+        FXMLLoader fxmlLoader = new FXMLLoader(SuperController.class.getResource(viewName));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+            SuperController controller = fxmlLoader.getController();
+            controller.setStage(stage);
+            controller.setObject(dataObject);
+            stage.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

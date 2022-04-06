@@ -4,6 +4,8 @@ import com.example.javafxmobileapp.Game;
 import com.example.javafxmobileapp.GameService;
 import com.example.javafxmobileapp.RetroFitServiceGenerator;
 import com.example.javafxmobileapp.SuperController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -38,6 +40,20 @@ public class ListOfGamesController extends SuperController {
         catch (Exception e){
             System.out.println(e);
         }
+
+       listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Game>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Game> observable, Game oldValue, Game newValue) {
+                // Your action here
+                System.out.println("Selected item: " + newValue);
+
+                changeScene("game.fxml",newValue);
+
+
+            }
+        });
+
 
     }
 
