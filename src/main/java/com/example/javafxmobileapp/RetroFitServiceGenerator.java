@@ -52,19 +52,9 @@ public class RetroFitServiceGenerator {
     }
 
 
+    public static <S> S createAuthService(Class<S> gameServiceClass) {
 
-
-
-
-    public static <S> S createService2(Class<S> serviceClass2, String name,String password,String Email) {
-
-
-
-
-
-
-        return retrofit.create(serviceClass2);
-
+        return createService(gameServiceClass,userName,password);
     }
 }
 

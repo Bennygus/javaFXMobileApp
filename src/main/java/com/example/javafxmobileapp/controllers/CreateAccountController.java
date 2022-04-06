@@ -26,9 +26,7 @@ public class CreateAccountController extends SuperController {
 
        User user = new User(createUserEmailTextField.getText(),createDisplayNameTextField.getText(),createUserPasswordTextField.getText());
 
-        UserService service =  RetroFitServiceGenerator.createService2(UserService.class,createDisplayNameTextField.getText(), createUserPasswordTextField.getText(),createUserEmailTextField.getText());
-      //  UserService service =  RetroFitServiceGenerator.createService2(UserService.class, user.getName(),  user.getPassword(),user.getEmail());
-
+        UserService service =  RetroFitServiceGenerator.createService(UserService.class);
 
 
       Call<User> callSync = service.createUsers(user);
@@ -37,16 +35,7 @@ public class CreateAccountController extends SuperController {
 
             Response<User> response = callSync.execute();
 
-//            if (response.isSuccessful()) changeScene("lobby.fxml");
-
-            //String text = response.body().getMessage();
-
 //
-//            RetroFitServiceGenerator.userEmail = createUserEmailTextField.getText();
-//            RetroFitServiceGenerator.userName = createDisplayNameTextField.getText();
-//            RetroFitServiceGenerator.password = createUserPasswordTextField.getText();
-
-           // System.out.println(text);
         }
         catch (Exception e){
             System.out.println(e.getMessage());

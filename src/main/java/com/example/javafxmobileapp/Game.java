@@ -6,15 +6,26 @@ public class Game extends User {
 
     private int gameId;
     private String message;
-    private String playerOne ="1";
-    private String playerTwo;
+    private String playerOne ;
+    private String playerTwo ;
     private String result;
     private String choiceOne;
-    private String choiceTwo = "Paper";
+    private String choiceTwo;
+
+    @Override
+    public String toString() {
+        return "Game " + gameId +
+                ": Challenger " + playerOne +
+                " vs " + playerTwo +
+                " = result: " + result
+                ;
+    }
 
     public Game() {
     }
 
+    public Game(String playerOne,String playerTwo,String choiceTwo) {
+    }
 
 
     public Game(String message, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo) {

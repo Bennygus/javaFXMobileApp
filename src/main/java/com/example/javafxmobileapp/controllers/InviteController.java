@@ -1,29 +1,19 @@
 package com.example.javafxmobileapp.controllers;
 
-import com.example.javafxmobileapp.Game;
-import com.example.javafxmobileapp.SuperController;
+import com.example.javafxmobileapp.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class InviteController extends SuperController {
 
 
-
-    ObservableList<ChoiceBox<String>> choiceBoxForPLayersList = FXCollections.observableArrayList();
-
-    //String st[] = { "Arnab", "Andrew", "Ankit", "None" };
-
-
-
-
-
-
+    @FXML
+    public TextField TextFieldForPLayers;
 
 
     @FXML
@@ -34,8 +24,7 @@ public class InviteController extends SuperController {
     CheckBox CheckBoxThreeWithNumberFiveAsChoice;
 
 //FXCollections.observableArrayList(st)
-    @FXML
-    ChoiceBox <String> ChoiceBoxForPLayers = new ChoiceBox<>();
+
 
     @FXML
     TextArea TextAreaForMessageToPlayer;
@@ -43,9 +32,33 @@ public class InviteController extends SuperController {
     public Button ButtonForSendInvite;
 
 
+
     public void ButtonForSendingInvite(ActionEvent event) {
-        Game startNewGame = new Game();
+
+      String getPlayerNameTwo=  TextFieldForPLayers.getText();
+        Game startNewGame = new Game("hej",RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","");
+
+
+
+        GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
+
+
+        Call<Game> callSync = service.createGame(startNewGame);
+
+        try {
+            changeScene("game.fxml");
+            Response<Game> response = callSync.execute();
+
+
+
+//
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+
+        }
     }
+
 
     public void ButtonBackToLobby(ActionEvent actionEvent) {
 
@@ -68,7 +81,8 @@ public class InviteController extends SuperController {
         if (CheckBoxTwoWithNumberThreeAsChoice.isSelected()) {
             CheckboxOneWithNumberOneAsChoice.setSelected(false);
             CheckBoxThreeWithNumberFiveAsChoice.setSelected(false);
-        }
+
+                    }
     }
 
     @FXML

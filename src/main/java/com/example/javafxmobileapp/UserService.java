@@ -13,10 +13,7 @@ public interface UserService {
     Call<Text> getGreeting();
 
 
-    //TODO fix Same in DB
-    @POST("/game")
-    Call<Game> createGame(
-            @Body Game game);
+
 
     @POST("/users")
     Call<User> createUsers(

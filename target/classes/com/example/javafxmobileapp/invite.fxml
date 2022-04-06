@@ -46,6 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.TextField?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.InviteController">
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
@@ -76,12 +77,12 @@
             <HBox prefHeight="94.0" prefWidth="191.0">
                <children>
                   <CheckBox fx:id="CheckboxOneWithNumberOneAsChoice" mnemonicParsing="false" onAction="#handleOneBox" text="1 " />
-                  <CheckBox fx:id="CheckBoxTwoWithNumberThreeAsChoice" mnemonicParsing="false" onAction="#handleThreeBox" text="3">
+                  <CheckBox fx:id="CheckBoxTwoWithNumberThreeAsChoice" mnemonicParsing="false" onAction="#handleThreeBox" text="3" disable="true">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
                   </CheckBox>
-                  <CheckBox fx:id="CheckBoxThreeWithNumberFiveAsChoice" mnemonicParsing="false" onAction="#handleFiveBox" text="5">
+                  <CheckBox fx:id="CheckBoxThreeWithNumberFiveAsChoice" mnemonicParsing="false" onAction="#handleFiveBox" text="5" disable="true">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -93,11 +94,11 @@
                   <VBox prefHeight="100.0" prefWidth="148.0">
                      <children>
                         <Text id="TextChoosePlayer" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Player" wrappingWidth="145.25390625" />
-                        <ChoiceBox id="ChoiceBoxForPLayers" fx:id="ChoiceBoxForPLayers" prefHeight="27.0" prefWidth="152.0">
+                        <TextField id="ChoiceBoxForPLayers" fx:id="TextFieldForPLayers" prefHeight="27.0" prefWidth="152.0" >
                            <opaqueInsets>
                               <Insets top="5.0" />
                            </opaqueInsets>
-                        </ChoiceBox>
+                        </TextField>
                      </children>
                   </VBox>
                </children>
