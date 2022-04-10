@@ -76,7 +76,7 @@
             </VBox>
             <HBox prefHeight="94.0" prefWidth="191.0">
                <children>
-                  <CheckBox fx:id="CheckboxOneWithNumberOneAsChoice" mnemonicParsing="false" onAction="#handleOneBox" text="1 " />
+                  <CheckBox fx:id="CheckboxOneWithNumberOneAsChoice" mnemonicParsing="false" onAction="#handleOneBox" text="1 "  />
                   <CheckBox fx:id="CheckBoxTwoWithNumberThreeAsChoice" mnemonicParsing="false" onAction="#handleThreeBox" text="3" disable="true">
                      <HBox.margin>
                         <Insets left="5.0" />

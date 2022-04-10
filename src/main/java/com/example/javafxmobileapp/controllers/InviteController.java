@@ -1,13 +1,15 @@
 package com.example.javafxmobileapp.controllers;
 
 import com.example.javafxmobileapp.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import retrofit2.Call;
 import retrofit2.Response;
+
+import java.util.Objects;
+
 
 public class InviteController extends SuperController {
 
@@ -23,7 +25,7 @@ public class InviteController extends SuperController {
     @FXML
     CheckBox CheckBoxThreeWithNumberFiveAsChoice;
 
-//FXCollections.observableArrayList(st)
+
 
 
     @FXML
@@ -32,11 +34,12 @@ public class InviteController extends SuperController {
     public Button ButtonForSendInvite;
 
 
-
     public void ButtonForSendingInvite(ActionEvent event) {
+
 
       String getPlayerNameTwo=  TextFieldForPLayers.getText();
         Game startNewGame = new Game("hej",RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","");
+
 
 
 
@@ -45,9 +48,29 @@ public class InviteController extends SuperController {
 
         Call<Game> callSync = service.createGame(startNewGame);
 
+
+
+
+
+
         try {
-            changeScene("game.fxml");
+
+
+          //  changeScene("game.fxml");
             Response<Game> response = callSync.execute();
+
+
+
+
+
+
+
+
+            startNewGame = response.body();
+
+            assert startNewGame != null;
+            GameController  gameController = (GameController) changeScene("game.fxml",startNewGame);
+            gameController.setGame(startNewGame);
 
 
 
@@ -57,6 +80,7 @@ public class InviteController extends SuperController {
             System.out.println(e.getMessage());
 
         }
+
     }
 
 
@@ -70,7 +94,13 @@ public class InviteController extends SuperController {
 
     @FXML
     private void handleOneBox(){
+
+
+        CheckboxOneWithNumberOneAsChoice.setSelected(true);
         if (CheckboxOneWithNumberOneAsChoice.isSelected()) {
+
+
+
             CheckBoxTwoWithNumberThreeAsChoice.setSelected(false);
             CheckBoxThreeWithNumberFiveAsChoice.setSelected(false);
         }

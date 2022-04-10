@@ -1,16 +1,25 @@
 package com.example.javafxmobileapp.controllers;
 
-import com.example.javafxmobileapp.Game;
-import com.example.javafxmobileapp.RetroFitServiceGenerator;
-import com.example.javafxmobileapp.SuperController;
+import com.example.javafxmobileapp.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+
+import retrofit2.Call;
+import retrofit2.Response;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Objects;
+
 
 public class GameController extends SuperController {
 
@@ -19,7 +28,10 @@ public class GameController extends SuperController {
     public static final String PAPER ="Paper";
     public static final String SCISSOR ="Scissor";
 
+
     Game game = new Game();
+    GameRules gameRules;
+
 
 
 
@@ -27,9 +39,13 @@ public class GameController extends SuperController {
     //Top
 
     public Pane PaneLeftForScore;
+
     public Text TextOnLeftPaneForScore;
+    @FXML
     public Label LabelForPlayerOneAtScore;
+    @FXML
     public Label LabelForPlayerTwoAtScore;
+
     public Text TextOnRightPaneForScore;
 
     @FXML
@@ -73,8 +89,10 @@ public class GameController extends SuperController {
 
     public Label LabelForPlayerTwoChoice;
 
+    @FXML
     public ImageView ImageViewForPlayerOneChoice;
 
+    @FXML
     public ImageView ImageViewForPlayerTwoChoice;
 
     @FXML
@@ -93,7 +111,6 @@ public class GameController extends SuperController {
     //för över vald game
     public void initialize(){
 
-        game = (Game) this.getObject();
     }
 
 
@@ -127,88 +144,189 @@ public class GameController extends SuperController {
 
     }
 
+
+
+    public void match(){
+
+
+        LabelForWinner.setOpacity(1);
+
+        if (game.getChoiceOne().equals(game.getChoiceTwo())){ System.out.println("TIE");
+
+            LabelForWinner.setText("Tie!");}
+
+
+        else if (game.getChoiceOne().equals(ROCK)){
+            if (game.getChoiceTwo().equals(PAPER)) {
+
+                LabelForWinner.setText(game.getPlayerTwo() +
+                        " Wins!");
+                TextOnRightPaneForScore.setText("1");
+
+
+
+            } else {
+                LabelForWinner.setText(game.getPlayerOne() + " Wins!");
+                TextOnLeftPaneForScore.setText("1");
+            }
+
+        }
+        else if (game.getChoiceOne().equals(PAPER)){
+            if (game.getChoiceTwo().equals(SCISSOR)) {
+                LabelForWinner.setText(game.getPlayerTwo() +
+                        " Wins!");
+                TextOnRightPaneForScore.setText("1");
+
+            } else {
+                LabelForWinner.setText(game.getPlayerOne() + " Wins!");
+                TextOnLeftPaneForScore.setText("1");
+            }
+
+        }
+
+        else if (game.getChoiceOne().equals(SCISSOR)){
+            if (game.getChoiceTwo().equals(ROCK)) {
+                LabelForWinner.setText(game.getPlayerTwo() +
+                        " Wins!");
+                TextOnRightPaneForScore.setText("1");
+
+            } else {
+                LabelForWinner.setText(game.getPlayerOne() + " Wins!");
+                TextOnLeftPaneForScore.setText("1");
+            }
+
+        }
+
+
+
+
+
+    }
+
+
+    public void setGame(Game game) {
+
+
+
+        this.game = game;
+
+        // Set name for the players next to the score one :Left two:right
+       LabelForPlayerOneAtScore.setText(game.getPlayerOne());
+       LabelForPlayerTwoAtScore.setText(game.getPlayerTwo());
+
+
+        if (game.getPlayerOne().equals(RetroFitServiceGenerator.userName)){
+
+
+            game.setPlayerOne(RetroFitServiceGenerator.userName);
+
+
+        }
+        else game.setPlayerTwo(RetroFitServiceGenerator.userName);
+
+       // LabelForPlayerOneAtScore.setText(game.getPlayerOne());
+
+    }
+
 //------------
-public void match(){
+    //game = (Game) this.getMyObject();
 
-    LabelForWinner.setOpacity(1);
-
-    if (game.getChoiceOne().equals(game.getChoiceTwo())){ System.out.println("TIE");
-
-        LabelForWinner.setText("TIE!");}
+    public void ClickOnRockButton(ActionEvent event) {
 
 
-    else if (game.getChoiceOne().equals(ROCK)){
-        if (game.getChoiceTwo().equals(PAPER)) {
+        setYourChoice(ROCK);
 
-            LabelForWinner.setText(game.getPlayerTwo() +
-                    " wins");
-            TextOnRightPaneForScore.setText("1");
-
-        } else {
-            LabelForWinner.setText(game.getPlayerOne() + " wins");
-            TextOnLeftPaneForScore.setText("1");
-        }
 
     }
-    else if (game.getChoiceOne().equals(PAPER)){
-        if (game.getChoiceTwo().equals(SCISSOR)) {
-            LabelForWinner.setText(game.getPlayerTwo() +
-                    " wins");
-            TextOnRightPaneForScore.setText("1");
-
-        } else {
-            LabelForWinner.setText(game.getPlayerOne() + " wins");
-            TextOnLeftPaneForScore.setText("1");
-        }
-
-    }
-
-    else if (game.getChoiceOne().equals(SCISSOR)){
-        if (game.getChoiceTwo().equals(ROCK)) {
-            LabelForWinner.setText(game.getPlayerTwo() +
-                    " wins");
-            TextOnRightPaneForScore.setText("1");
-
-        } else {
-            LabelForWinner.setText(game.getPlayerOne() + " wins");
-            TextOnLeftPaneForScore.setText("1");
-        }
-
-    }
-
-
-
-
-
-}
 
     public void ClickOnPaperButton(ActionEvent event) {
-
-        if (game.getPlayerOne().equals("1")) game.setChoiceOne(PAPER); {
-            try {
-
-            }
-            catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-
-        }
+        setYourChoice(PAPER);
 
     }
 
     public void ClickOnScissorButton(ActionEvent event) {
-        if (game.getPlayerOne().equals("1")) game.setChoiceOne(SCISSOR); {
-            try {
+        setYourChoice(SCISSOR);
 
-            }
-            catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-
-        }
 
     }
 
+    private void setYourChoice(String choice) {
+
+
+//            if (game.getGameId()==null){
+//                GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
+//
+//
+//
+//            }
+
+
+
+            if (RetroFitServiceGenerator.userName.equals(game.getPlayerOne()))
+                game.setChoiceOne(choice);
+
+            else
+                game.setChoiceTwo(choice);
+
+            //when both have done a choice
+            if (!Objects.equals(game.getChoiceOne(), "") && !Objects.equals(game.getChoiceTwo(), "")){
+
+
+
+                //set players choice visible
+                LabelForPlayerOneChoice.setVisible(true);
+                LabelForPlayerOneChoice.setText(game.getPlayerOne() + " played " + game.getChoiceOne());
+                LabelForPlayerTwoChoice.setVisible(true);
+                LabelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
+
+                if (game.getChoiceOne().equals(game.getChoiceTwo()))
+
+                    try {
+
+                        Image myImage= new Image(("/Rock.jpg"));
+
+                        ImageViewForPlayerOneChoice.setVisible(true);
+                        ImageViewForPlayerTwoChoice.setVisible(true);
+
+
+
+                        ImageViewForPlayerOneChoice.setImage(myImage);
+                        ImageViewForPlayerTwoChoice.setImage(myImage);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+
+
+                match();}
+
+
+
+            GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
+
+
+
+
+            Call<Game> callSync = service.updateMyGame(game.getGameId(),game);
+
+
+            try {
+
+                Response<Game> response = callSync.execute();
+//
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+
+            }
+
+
+
+
+
+    }
 
 
 }

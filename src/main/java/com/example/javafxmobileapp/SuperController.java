@@ -11,8 +11,8 @@ public class SuperController {
     private Stage stage;
     private Object object;
 
-    public Object getObject() {
-        return object;
+    public Object getMyObject() {
+        return this.object;
     }
 
     public void setObject(Object object) {
@@ -45,7 +45,7 @@ public class SuperController {
     }
 
 
-    public void changeScene(String viewName,Object dataObject) {
+    public SuperController changeScene(String viewName,Object dataObject) {
         FXMLLoader fxmlLoader = new FXMLLoader(SuperController.class.getResource(viewName));
         Scene scene = null;
         try {
@@ -55,10 +55,13 @@ public class SuperController {
             controller.setObject(dataObject);
             stage.setScene(scene);
 
+            return controller;
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 
+        return null;
     }
 }

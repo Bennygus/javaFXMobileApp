@@ -4,7 +4,7 @@ public class Game extends User {
 
 
 
-    private int gameId;
+    private Long gameId;
     private String message;
     private String playerOne ;
     private String playerTwo ;
@@ -24,11 +24,11 @@ public class Game extends User {
     public Game() {
     }
 
-    public Game(String playerOne,String playerTwo,String choiceTwo) {
-    }
+
 
 
     public Game(String message, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo) {
+
         this.message = message;
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
@@ -37,11 +37,11 @@ public class Game extends User {
         this.choiceTwo = choiceTwo;
     }
 
-    public int getGameId() {
+    public Long getGameId() {
         return gameId;
     }
 
-    public void setGameId(int gameId) {
+    public void setGameId(Long gameId) {
         this.gameId = gameId;
     }
 

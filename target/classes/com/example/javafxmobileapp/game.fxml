@@ -162,15 +162,15 @@
          <center>
             <AnchorPane prefHeight="249.0" prefWidth="346.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label id="LabelForPlayerOneChoice" fx:id="LabelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text="you played Scissor" />
-                  <Label id="LabelForPlayerTwoChoice" fx:id="LabelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text="comp played Paper" />
+                  <Label id="LabelForPlayerOneChoice" fx:id="LabelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text=" played " visible="false"/>
+                  <Label id="LabelForPlayerTwoChoice" fx:id="LabelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text=" played " visible="false" />
                   <Label id="LabelForWinner" fx:id="LabelForWinner" alignment="CENTER" layoutX="133.0" layoutY="135.0" opacity="0.0" prefHeight="17.0" prefWidth="70.0" text="YOU WIN!" />
-                  <ImageView id="ImageViewForPlayerOneChoice" fx:id="ImageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="ImageViewForPlayerOneChoice" fx:id="ImageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../../../invite_friend.png" />
                      </image>
                   </ImageView>
-                  <ImageView id="ImageViewForPlayerTwoChoice" fx:id="ImageViewForPlayerTwoChoice" fitHeight="55.0" fitWidth="55.0" layoutX="238.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="ImageViewForPlayerTwoChoice" fx:id="ImageViewForPlayerTwoChoice" fitHeight="55.0" fitWidth="55.0" layoutX="238.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../../../pngwing.com.png" />
                      </image>

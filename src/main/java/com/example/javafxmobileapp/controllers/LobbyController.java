@@ -1,10 +1,13 @@
 package com.example.javafxmobileapp.controllers;
 
 import com.example.javafxmobileapp.Game;
+import com.example.javafxmobileapp.GameService;
 import com.example.javafxmobileapp.RetroFitServiceGenerator;
 import com.example.javafxmobileapp.SuperController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import retrofit2.Call;
+import retrofit2.Response;
 
 import java.util.Random;
 
@@ -30,11 +33,32 @@ public class LobbyController extends SuperController {
 
     public void gameAgainstComp(ActionEvent event){
 
-        String playName = RetroFitServiceGenerator.userName;
+
 
         String comp = "computer";
-        Game compGame = new Game(playName,comp,getComputerMove());
-        changeScene("game.fxml");
+     Game startNewGame = new Game("hej",RetroFitServiceGenerator.userName,"r","","",getComputerMove());
+
+
+
+
+
+        GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
+
+
+        Call<Game> callSync = service.createGame(startNewGame);
+
+        try {
+            changeScene("game.fxml");
+            Response<Game> response = callSync.execute();
+
+
+
+//
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+
+        }
 
     }
 
