@@ -36,6 +36,7 @@ public class GameController extends SuperController {
 
 
 
+
     //Top
 
     public Pane PaneLeftForScore;
@@ -148,51 +149,129 @@ public class GameController extends SuperController {
 
     public void match(){
 
+        ImageViewForPlayerOneChoice.setVisible(true);
+        ImageViewForPlayerTwoChoice.setVisible(true);
 
         LabelForWinner.setOpacity(1);
 
         if (game.getChoiceOne().equals(game.getChoiceTwo())){ System.out.println("TIE");
 
-            LabelForWinner.setText("Tie!");}
+            LabelForWinner.setText("Tie!");
+
+            Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+            ImageViewForPlayerOneChoice.setImage(myImage);
+            ImageViewForPlayerTwoChoice.setImage(myImage);
+
+
+        }
 
 
         else if (game.getChoiceOne().equals(ROCK)){
+
             if (game.getChoiceTwo().equals(PAPER)) {
 
                 LabelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
                 TextOnRightPaneForScore.setText("1");
 
+                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
+
+                ImageViewForPlayerTwoChoice.setImage(myImage);
+
+                Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+                ImageViewForPlayerOneChoice.setImage(myImage2);
+
 
 
             } else {
                 LabelForWinner.setText(game.getPlayerOne() + " Wins!");
                 TextOnLeftPaneForScore.setText("1");
+
+                Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+                ImageViewForPlayerOneChoice.setImage(myImage2);
+
+                Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
+
+
+                ImageViewForPlayerTwoChoice.setImage(myImage3);
+
+
+
+
             }
 
         }
         else if (game.getChoiceOne().equals(PAPER)){
+
             if (game.getChoiceTwo().equals(SCISSOR)) {
                 LabelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
                 TextOnRightPaneForScore.setText("1");
+                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
+
+                ImageViewForPlayerTwoChoice.setImage(myImage);
+
+                Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+                ImageViewForPlayerOneChoice.setImage(myImage2);
 
             } else {
                 LabelForWinner.setText(game.getPlayerOne() + " Wins!");
                 TextOnLeftPaneForScore.setText("1");
+
+                Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+                ImageViewForPlayerOneChoice.setImage(myImage2);
+
+                Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
+
+
+                ImageViewForPlayerTwoChoice.setImage(myImage3);
+
+
             }
 
         }
 
         else if (game.getChoiceOne().equals(SCISSOR)){
+
             if (game.getChoiceTwo().equals(ROCK)) {
                 LabelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
                 TextOnRightPaneForScore.setText("1");
 
-            } else {
+                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
+
+                ImageViewForPlayerTwoChoice.setImage(myImage);
+
+                Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+                ImageViewForPlayerOneChoice.setImage(myImage2);
+
+            } else  {
                 LabelForWinner.setText(game.getPlayerOne() + " Wins!");
                 TextOnLeftPaneForScore.setText("1");
+
+                Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
+
+
+                ImageViewForPlayerOneChoice.setImage(myImage2);
+
+                Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
+
+
+                ImageViewForPlayerTwoChoice.setImage(myImage3);
+
+
             }
 
         }
@@ -272,30 +351,40 @@ public class GameController extends SuperController {
             if (!Objects.equals(game.getChoiceOne(), "") && !Objects.equals(game.getChoiceTwo(), "")){
 
 
-
                 //set players choice visible
                 LabelForPlayerOneChoice.setVisible(true);
                 LabelForPlayerOneChoice.setText(game.getPlayerOne() + " played " + game.getChoiceOne());
                 LabelForPlayerTwoChoice.setVisible(true);
                 LabelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
 
-                if (game.getChoiceOne().equals(game.getChoiceTwo()))
+                // When it's a Tie
+                if (game.getChoiceOne().equals(game.getChoiceTwo())) {
 
                     try {
 
-                        Image myImage= new Image(("/Rock.jpg"));
-
-                        ImageViewForPlayerOneChoice.setVisible(true);
-                        ImageViewForPlayerTwoChoice.setVisible(true);
-
-
-
-                        ImageViewForPlayerOneChoice.setImage(myImage);
-                        ImageViewForPlayerTwoChoice.setImage(myImage);
+//                        Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
+//
+//                        ImageViewForPlayerOneChoice.setVisible(true);
+//                        ImageViewForPlayerTwoChoice.setVisible(true);
+//
+//
+//                        ImageViewForPlayerOneChoice.setImage(myImage);
+//                        ImageViewForPlayerTwoChoice.setImage(myImage);
 
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                }
+
+
+
+
+//                GameDone gameDone = new GameDone();
+//
+//              gameDone.afterGameShowChoiceAndWinner(game);
+
+
+
 
 
 

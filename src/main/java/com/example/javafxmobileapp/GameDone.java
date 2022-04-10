@@ -1,6 +1,18 @@
 package com.example.javafxmobileapp;
 
-public class GameDone {
+import com.example.javafxmobileapp.controllers.GameController;
+import javafx.scene.image.Image;
+
+public class GameDone extends SuperController {
+    GameController gameController = new GameController();
+
+
+    public Game afterGameShowChoiceAndWinner(Game game){
+
+
+
+return game;
+    }
 
 
 }
