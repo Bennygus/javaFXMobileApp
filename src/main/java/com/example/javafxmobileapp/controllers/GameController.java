@@ -339,6 +339,9 @@ public class GameController extends SuperController {
             if (!Objects.equals(game.getChoiceOne(), "") && !Objects.equals(game.getChoiceTwo(), "")){
 
 
+
+
+
                 //set players choice visible
                 LabelForPlayerOneChoice.setVisible(true);
                 LabelForPlayerOneChoice.setText(game.getPlayerOne() + " played " + game.getChoiceOne());
@@ -383,7 +386,9 @@ public class GameController extends SuperController {
 
             GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
 
-
+        if (!game.getResult().equals("")){
+            game.setState("Closed");
+        }
 
 
             Call<Game> callSync = service.updateMyGame(game.getGameId(),game);

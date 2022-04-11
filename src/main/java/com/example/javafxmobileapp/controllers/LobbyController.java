@@ -36,7 +36,7 @@ public class LobbyController extends SuperController {
 
 
         String comp = "computer";
-     Game startNewGame = new Game("hej",RetroFitServiceGenerator.userName,"r","","",getComputerMove());
+     Game startNewGame = new Game("hej",RetroFitServiceGenerator.userName,"r","","",getComputerMove(),"");
 
 
 

@@ -11,11 +11,12 @@ public class Game extends User {
     private String result;
     private String choiceOne;
     private String choiceTwo;
+    private String state;
 
     @Override
     public String toString() {
 
-        return  "Game " + gameId +
+        return  state +" Game " + gameId +
                 ": Challenger " + playerOne +
                 " vs " + playerTwo +
                 " = result: " + result
@@ -28,7 +29,7 @@ public class Game extends User {
 
 
 
-    public Game(String message, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo) {
+    public Game(String message, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo,String state) {
 
         this.message = message;
         this.playerOne = playerOne;
@@ -36,6 +37,7 @@ public class Game extends User {
         this.result = result;
         this.choiceOne = choiceOne;
         this.choiceTwo = choiceTwo;
+        this.state = state;
     }
 
     public Long getGameId() {
@@ -92,5 +94,13 @@ public class Game extends User {
 
     public void setChoiceTwo(String choiceTwo) {
         this.choiceTwo = choiceTwo;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

@@ -88,7 +88,7 @@ public class InviteController extends SuperController {
 // ---------------------------Test Random end---------
 
 
-        Game startNewGame = new Game(TextAreaForMessageToPlayer.getText(),RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","");
+        Game startNewGame = new Game(TextAreaForMessageToPlayer.getText(),RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","","Active");
 
         GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
 
