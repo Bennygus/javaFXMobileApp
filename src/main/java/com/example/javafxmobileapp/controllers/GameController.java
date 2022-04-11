@@ -149,6 +149,8 @@ public class GameController extends SuperController {
 
     public void match(){
 
+        //TODO Transfer to GameRules and write better code!
+
         ImageViewForPlayerOneChoice.setVisible(true);
         ImageViewForPlayerTwoChoice.setVisible(true);
 
@@ -158,12 +160,14 @@ public class GameController extends SuperController {
 
             LabelForWinner.setText("Tie!");
 
+            game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+
+
             Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
 
 
             ImageViewForPlayerOneChoice.setImage(myImage);
             ImageViewForPlayerTwoChoice.setImage(myImage);
-
 
         }
 
@@ -176,13 +180,12 @@ public class GameController extends SuperController {
                         " Wins!");
                 TextOnRightPaneForScore.setText("1");
 
-                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
+                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
 
+                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
                 ImageViewForPlayerTwoChoice.setImage(myImage);
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-
-
                 ImageViewForPlayerOneChoice.setImage(myImage2);
 
 
@@ -191,14 +194,13 @@ public class GameController extends SuperController {
                 LabelForWinner.setText(game.getPlayerOne() + " Wins!");
                 TextOnLeftPaneForScore.setText("1");
 
+                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-
-
                 ImageViewForPlayerOneChoice.setImage(myImage2);
 
+
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
-
-
                 ImageViewForPlayerTwoChoice.setImage(myImage3);
 
 
@@ -213,27 +215,27 @@ public class GameController extends SuperController {
                 LabelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
                 TextOnRightPaneForScore.setText("1");
-                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
 
+                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+
+                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
                 ImageViewForPlayerTwoChoice.setImage(myImage);
 
+
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-
-
                 ImageViewForPlayerOneChoice.setImage(myImage2);
 
             } else {
                 LabelForWinner.setText(game.getPlayerOne() + " Wins!");
                 TextOnLeftPaneForScore.setText("1");
 
+                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-
-
                 ImageViewForPlayerOneChoice.setImage(myImage2);
 
+
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
-
-
                 ImageViewForPlayerTwoChoice.setImage(myImage3);
 
 
@@ -248,27 +250,26 @@ public class GameController extends SuperController {
                         " Wins!");
                 TextOnRightPaneForScore.setText("1");
 
-                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
+                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
 
+                Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
                 ImageViewForPlayerTwoChoice.setImage(myImage);
 
+
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-
-
                 ImageViewForPlayerOneChoice.setImage(myImage2);
 
             } else  {
                 LabelForWinner.setText(game.getPlayerOne() + " Wins!");
                 TextOnLeftPaneForScore.setText("1");
 
+                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-
-
                 ImageViewForPlayerOneChoice.setImage(myImage2);
 
+
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
-
-
                 ImageViewForPlayerTwoChoice.setImage(myImage3);
 
 
@@ -340,7 +341,7 @@ public class GameController extends SuperController {
 //            }
 
 
-
+            // Set choice to determine if it's the one inviting aka first player(left) or second(right)
             if (RetroFitServiceGenerator.userName.equals(game.getPlayerOne()))
                 game.setChoiceOne(choice);
 
@@ -358,23 +359,23 @@ public class GameController extends SuperController {
                 LabelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
 
                 // When it's a Tie
-                if (game.getChoiceOne().equals(game.getChoiceTwo())) {
-
-                    try {
-
-//                        Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
+//                if (game.getChoiceOne().equals(game.getChoiceTwo())) {
 //
-//                        ImageViewForPlayerOneChoice.setVisible(true);
-//                        ImageViewForPlayerTwoChoice.setVisible(true);
+//                    try {
 //
+////                        Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
+////
+////                        ImageViewForPlayerOneChoice.setVisible(true);
+////                        ImageViewForPlayerTwoChoice.setVisible(true);
+////
+////
+////                        ImageViewForPlayerOneChoice.setImage(myImage);
+////                        ImageViewForPlayerTwoChoice.setImage(myImage);
 //
-//                        ImageViewForPlayerOneChoice.setImage(myImage);
-//                        ImageViewForPlayerTwoChoice.setImage(myImage);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
 
 
 
@@ -388,7 +389,7 @@ public class GameController extends SuperController {
 
 
 
-
+                // rules and determine winner and show all choices and winner
                 match();}
 
 

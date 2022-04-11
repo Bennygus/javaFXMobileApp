@@ -14,7 +14,8 @@ public class Game extends User {
 
     @Override
     public String toString() {
-        return "Game " + gameId +
+
+        return  "Game " + gameId +
                 ": Challenger " + playerOne +
                 " vs " + playerTwo +
                 " = result: " + result
