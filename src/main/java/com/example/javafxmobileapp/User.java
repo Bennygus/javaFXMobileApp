@@ -2,7 +2,7 @@ package com.example.javafxmobileapp;
 
 public class User {
 
-    private int id;
+    private Long id;
     private String email;
     private String name;
     private String password;

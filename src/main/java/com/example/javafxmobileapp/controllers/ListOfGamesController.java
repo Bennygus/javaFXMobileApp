@@ -48,7 +48,7 @@ public class ListOfGamesController extends SuperController {
                 // Your action here
 
                 if (newValue.getResult().equals("")){
-                System.out.println("Selected item: " + newValue);
+              //  System.out.println("Selected item: " + newValue);
 
                 // ändrar controller från super till gameController med type cast
                 GameController  gameController = (GameController) changeScene("game.fxml",newValue);

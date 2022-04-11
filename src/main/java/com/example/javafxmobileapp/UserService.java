@@ -5,6 +5,7 @@ package com.example.javafxmobileapp;
 import retrofit2.Call;
 import retrofit2.http.*;
 
+import java.util.List;
 
 
 public interface UserService {
@@ -12,7 +13,11 @@ public interface UserService {
     @GET("/greeting")
     Call<Text> getGreeting();
 
+    @GET("/users")
+    Call <List<String>>  getAllUsers(
 
+
+    );
 
 
     @POST("/users")

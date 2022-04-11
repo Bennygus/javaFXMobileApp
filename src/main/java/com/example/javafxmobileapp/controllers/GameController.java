@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,12 +31,6 @@ public class GameController extends SuperController {
 
 
     Game game = new Game();
-    GameRules gameRules;
-
-
-
-
-
 
     //Top
 
@@ -57,34 +52,6 @@ public class GameController extends SuperController {
     public Button ButtonForScissor;
 
 
-
-
-//        else if (game.getChoiceOne().equals(choicePlayerOne)){
-//            if (game.getChoiceTwo().equals(choicePlayerTwo)) {
-//                TextOnRightPaneForScore.setText("1");
-//            } else {
-//                TextOnLeftPaneForScore.setText("1");
-//            }
-//
-//        }
-
-
-
-//    public void ClickOnRockButton(ActionEvent event) {
-//        if (RetroFitServiceGenerator.userName.equals()) game.setChoiceOne(ROCK); {
-//            try {
-//                match();
-//            }
-//            catch (Exception e){
-//                System.out.println(e.getMessage());
-//            }
-//
-//        }
-//    }
-
-
-
-
     //Middle
     public Label LabelForPlayerOneChoice;
 
@@ -100,6 +67,7 @@ public class GameController extends SuperController {
     public Button ButtonForChanging;
     @FXML
     public Label LabelForWinner;
+
     //Bottom
 
     @FXML
@@ -108,6 +76,8 @@ public class GameController extends SuperController {
     public TextArea TextAreaForMessage;
     @FXML
     public Button ButtonForSendingMessage;
+    @FXML
+    public ListView matchResult;
 
     //för över vald game
     public void initialize(){
@@ -116,8 +86,12 @@ public class GameController extends SuperController {
 
 
     //TODO better code
-    // swap between message and score/result for each round by opacity
+    // swap between message and score/result for each round by opacity maybe disable instead
     public void changeOpacity(ActionEvent event) {
+
+//        ListOfGamesController listOfGamesController = new ListOfGamesController();
+//       listOfGamesController.initialize();
+
 
         if (TextAreaForMessage.getOpacity() == 1){
             TextAreaForMessage.setOpacity(0);
@@ -156,7 +130,7 @@ public class GameController extends SuperController {
 
         LabelForWinner.setOpacity(1);
 
-        if (game.getChoiceOne().equals(game.getChoiceTwo())){ System.out.println("TIE");
+        if (game.getChoiceOne().equals(game.getChoiceTwo())){
 
             LabelForWinner.setText("Tie!");
 
@@ -316,17 +290,26 @@ public class GameController extends SuperController {
 
         setYourChoice(ROCK);
 
+        ButtonForPaper.setDisable(true);
+        ButtonForScissor.setDisable(true);
+
+
 
     }
 
     public void ClickOnPaperButton(ActionEvent event) {
         setYourChoice(PAPER);
 
+        ButtonForRock.setDisable(true);
+        ButtonForScissor.setDisable(true);
+
     }
 
     public void ClickOnScissorButton(ActionEvent event) {
         setYourChoice(SCISSOR);
 
+        ButtonForPaper.setDisable(true);
+        ButtonForRock.setDisable(true);
 
     }
 
@@ -345,8 +328,12 @@ public class GameController extends SuperController {
             if (RetroFitServiceGenerator.userName.equals(game.getPlayerOne()))
                 game.setChoiceOne(choice);
 
+
+
             else
                 game.setChoiceTwo(choice);
+
+
 
             //when both have done a choice
             if (!Objects.equals(game.getChoiceOne(), "") && !Objects.equals(game.getChoiceTwo(), "")){

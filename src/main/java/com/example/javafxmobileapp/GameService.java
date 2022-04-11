@@ -14,14 +14,6 @@ public interface GameService {
 
     );
 
-    @GET("/all")
-    Call<Game> getCreatedGameFromInvite(
-
-                                        );
-
-
-
-
 
     // för update
     @PUT("/game/{id}")
@@ -29,9 +21,6 @@ public interface GameService {
             @Path("id") Long id,
             @Body Game game)
     ;
-
-
-
 
 
 
