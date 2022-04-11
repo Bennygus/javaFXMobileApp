@@ -25,9 +25,9 @@ import java.util.Objects;
 public class GameController extends SuperController {
 
 
-    public static final String ROCK ="Rock";
-    public static final String PAPER ="Paper";
-    public static final String SCISSOR ="Scissor";
+    private static final String ROCK ="Rock";
+    private static final String PAPER ="Paper";
+    private static final String SCISSOR ="Scissor";
 
 
     Game game = new Game();
@@ -76,6 +76,7 @@ public class GameController extends SuperController {
     public TextArea TextAreaForMessage;
     @FXML
     public Button ButtonForSendingMessage;
+    //TODO fix match result to switch button
     @FXML
     public ListView matchResult;
 
@@ -83,7 +84,6 @@ public class GameController extends SuperController {
     public void initialize(){
 
     }
-
 
     //TODO better code
     // swap between message and score/result for each round by opacity maybe disable instead
@@ -108,7 +108,6 @@ public class GameController extends SuperController {
         }
         else TextAreaForReceiving.setOpacity(1);
 
-
     }
 
     //TODO fix sendMessage to work like a chat
@@ -118,8 +117,6 @@ public class GameController extends SuperController {
 
 
     }
-
-
 
     public void match(){
 
@@ -144,7 +141,6 @@ public class GameController extends SuperController {
             ImageViewForPlayerTwoChoice.setImage(myImage);
 
         }
-
 
         else if (game.getChoiceOne().equals(ROCK)){
 
@@ -176,9 +172,6 @@ public class GameController extends SuperController {
 
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
                 ImageViewForPlayerTwoChoice.setImage(myImage3);
-
-
-
 
             }
 
@@ -246,20 +239,14 @@ public class GameController extends SuperController {
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
                 ImageViewForPlayerTwoChoice.setImage(myImage3);
 
-
             }
 
         }
-
-
-
-
 
     }
 
 
     public void setGame(Game game) {
-
 
 
         this.game = game;
@@ -294,7 +281,6 @@ public class GameController extends SuperController {
         ButtonForScissor.setDisable(true);
 
 
-
     }
 
     public void ClickOnPaperButton(ActionEvent event) {
@@ -316,31 +302,14 @@ public class GameController extends SuperController {
     private void setYourChoice(String choice) {
 
 
-//            if (game.getGameId()==null){
-//                GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
-//
-//
-//
-//            }
-
-
             // Set choice to determine if it's the one inviting aka first player(left) or second(right)
             if (RetroFitServiceGenerator.userName.equals(game.getPlayerOne()))
                 game.setChoiceOne(choice);
-
-
-
             else
                 game.setChoiceTwo(choice);
 
-
-
             //when both have done a choice
             if (!Objects.equals(game.getChoiceOne(), "") && !Objects.equals(game.getChoiceTwo(), "")){
-
-
-
-
 
                 //set players choice visible
                 LabelForPlayerOneChoice.setVisible(true);
@@ -348,40 +317,8 @@ public class GameController extends SuperController {
                 LabelForPlayerTwoChoice.setVisible(true);
                 LabelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
 
-                // When it's a Tie
-//                if (game.getChoiceOne().equals(game.getChoiceTwo())) {
-//
-//                    try {
-//
-////                        Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
-////
-////                        ImageViewForPlayerOneChoice.setVisible(true);
-////                        ImageViewForPlayerTwoChoice.setVisible(true);
-////
-////
-////                        ImageViewForPlayerOneChoice.setImage(myImage);
-////                        ImageViewForPlayerTwoChoice.setImage(myImage);
-//
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-
-
-
-
-//                GameDone gameDone = new GameDone();
-//
-//              gameDone.afterGameShowChoiceAndWinner(game);
-
-
-
-
-
-
                 // rules and determine winner and show all choices and winner
                 match();}
-
 
 
             GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
@@ -390,9 +327,7 @@ public class GameController extends SuperController {
             game.setState("Closed");
         }
 
-
             Call<Game> callSync = service.updateMyGame(game.getGameId(),game);
-
 
             try {
 
