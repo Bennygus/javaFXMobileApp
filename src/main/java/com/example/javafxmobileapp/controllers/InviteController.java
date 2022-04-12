@@ -170,5 +170,8 @@ public class InviteController extends SuperController {
     }
 
 
+    public void ButtonForCloseInviteGame(ActionEvent event) {
 
+        getStage().close();
+    }
 }

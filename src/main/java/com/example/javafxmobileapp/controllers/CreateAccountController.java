@@ -54,4 +54,8 @@ public class CreateAccountController extends SuperController {
 
 
     }
+
+    public void ButtonForCloseInCreateAccount(ActionEvent event) {
+        getStage().close();
+    }
 }

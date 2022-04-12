@@ -69,7 +69,7 @@ public class LogInController extends SuperController {
 
 
 
-    public void ExitGame(ActionEvent actionEvent) {
+    public void ButtonForCloseGameInLogin(ActionEvent actionEvent) {
 
         getStage().close();
 

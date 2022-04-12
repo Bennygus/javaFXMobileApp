@@ -16,9 +16,6 @@ import javafx.scene.text.Text;
 import retrofit2.Call;
 import retrofit2.Response;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.Objects;
 
 
@@ -28,6 +25,7 @@ public class GameController extends SuperController {
     private static final String ROCK ="Rock";
     private static final String PAPER ="Paper";
     private static final String SCISSOR ="Scissor";
+
 
 
     Game game = new Game();
@@ -78,8 +76,12 @@ public class GameController extends SuperController {
     public Button ButtonForSendingMessage;
     //TODO fix match result to switch button
     @FXML
-    public ListView matchResult;
 
+    public ListView matchResult;
+    @FXML
+    public Button ButtonForGameToGoBack;
+    @FXML
+    public Button ButtonForCloseGame;
     //för över vald game
     public void initialize(){
 
@@ -122,6 +124,7 @@ public class GameController extends SuperController {
             game.setMessageTwo(TextAreaForMessage.getText());
 
         TextAreaForReceiving.setText(game.getMessageOne());
+
 
     }
 
@@ -380,4 +383,12 @@ public class GameController extends SuperController {
     }
 
 
+    public void ButtonForGameToGoBackToLobby(ActionEvent event) {
+
+        changeScene("lobby.fxml");
+    }
+
+    public void ButtonForCloseGame(ActionEvent event) {
+        getStage().close();
+    }
 }

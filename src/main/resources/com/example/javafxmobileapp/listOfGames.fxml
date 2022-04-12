@@ -32,19 +32,31 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.layout.HBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.ListOfGamesController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listView" layoutX="57.0" layoutY="113.0" prefHeight="374.0" prefWidth="221.0"  />
-            <Button layoutY="560.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="89.0" text="Button" />
+            <ListView fx:id="listView" layoutX="57.0" layoutY="113.0" prefHeight="374.0" prefWidth="221.0" />
          </children>
       </AnchorPane>
    </center>
+   <bottom>
+      <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="ButtonForListOfGamesToGoBack" fx:id="ButtonForListOfGamesToGoBack" mnemonicParsing="false" onAction="#ButtonForListOfGamesToGoBack" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="ButtonForCloseTheGameInList" fx:id="ButtonForCloseTheGameInList" mnemonicParsing="false" onAction="#ButtonForCloseTheGameInList" prefHeight="40.0" prefWidth="113.0" text="Close">
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

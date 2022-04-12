@@ -53,9 +53,14 @@
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
             <Button id="ButtonGoBackToLobby" mnemonicParsing="false" onAction="#ButtonBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Go Back" />
+            <Button id="ButtonForCloseInviteGame" fx:id="ButtonForCloseInviteGame" minWidth="19.0" mnemonicParsing="false" onAction="#ButtonForCloseInviteGame" prefHeight="40.0" prefWidth="113.0" text="Close">
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin>
+            </Button>
             <Button id="ButtonForSendInvite" fx:id="ButtonForSendInvite" mnemonicParsing="false" onAction="#ButtonForSendingInvite" prefHeight="40.0" prefWidth="110.0" text="Send">
                <HBox.margin>
-                  <Insets left="115.0" />
+                  <Insets left="2.0" />
                </HBox.margin>
             </Button>
          </children>
