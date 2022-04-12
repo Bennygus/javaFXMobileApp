@@ -89,9 +89,6 @@ public class GameController extends SuperController {
     // swap between message and score/result for each round by opacity maybe disable instead
     public void changeOpacity(ActionEvent event) {
 
-//        ListOfGamesController listOfGamesController = new ListOfGamesController();
-//       listOfGamesController.initialize();
-
 
         if (TextAreaForMessage.getOpacity() == 1){
             TextAreaForMessage.setOpacity(0);
@@ -112,9 +109,19 @@ public class GameController extends SuperController {
 
     //TODO fix sendMessage to work like a chat
     public void sendMessageToPlayer(ActionEvent event) {
-        TextAreaForReceiving.setText(TextAreaForMessage.getText());
-        TextAreaForMessage.setText("");
 
+        TextAreaForReceiving.setText(TextAreaForMessage.getText());
+
+        if (game.getPlayerOne().equals(RetroFitServiceGenerator.userName) ){
+
+            game.setMessageOne(TextAreaForMessage.getText());
+
+
+        }
+        else
+            game.setMessageTwo(TextAreaForMessage.getText());
+
+        TextAreaForReceiving.setText(game.getMessageOne());
 
     }
 
@@ -246,8 +253,12 @@ public class GameController extends SuperController {
     }
 
 
-    public void setGame(Game game) {
+    /**
+     *
+     * @param game takes in a game object from invite and list.
+     */
 
+    public void setGame(Game game) {
 
         this.game = game;
 
@@ -256,21 +267,29 @@ public class GameController extends SuperController {
        LabelForPlayerTwoAtScore.setText(game.getPlayerTwo());
 
 
+       // getting result to closed games and disable the choice buttons
+       if (!game.getResult().equals("")){
+
+           ButtonForRock.setDisable(true);
+           ButtonForPaper.setDisable(true);
+           ButtonForScissor.setDisable(true);
+
+           match();
+
+       }
+
+        // set users to player One and two depending on who started the invite
         if (game.getPlayerOne().equals(RetroFitServiceGenerator.userName)){
 
 
             game.setPlayerOne(RetroFitServiceGenerator.userName);
 
-
         }
         else game.setPlayerTwo(RetroFitServiceGenerator.userName);
 
-       // LabelForPlayerOneAtScore.setText(game.getPlayerOne());
-
     }
 
-//------------
-    //game = (Game) this.getMyObject();
+
 
     public void ClickOnRockButton(ActionEvent event) {
 
@@ -299,7 +318,15 @@ public class GameController extends SuperController {
 
     }
 
+    /**
+     *
+     * @param choice method for choice and who make the choice depending on whose logged-in userName is equal to playerOne
+     *               or two.
+     *               also update the game and determine the outcome after both made a choice
+     *
+     */
     private void setYourChoice(String choice) {
+
 
 
             // Set choice to determine if it's the one inviting aka first player(left) or second(right)
@@ -311,21 +338,28 @@ public class GameController extends SuperController {
             //when both have done a choice
             if (!Objects.equals(game.getChoiceOne(), "") && !Objects.equals(game.getChoiceTwo(), "")){
 
+
                 //set players choice visible
                 LabelForPlayerOneChoice.setVisible(true);
                 LabelForPlayerOneChoice.setText(game.getPlayerOne() + " played " + game.getChoiceOne());
                 LabelForPlayerTwoChoice.setVisible(true);
                 LabelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
 
+
                 // rules and determine winner and show all choices and winner
-                match();}
+                match();
+
+                game.setState("Closed");
+            }
 
 
             GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
 
-        if (!game.getResult().equals("")){
-            game.setState("Closed");
-        }
+//        if (!game.getResult().equals("")){
+//            game.setState("Closed");
+//
+//
+//        }
 
             Call<Game> callSync = service.updateMyGame(game.getGameId(),game);
 

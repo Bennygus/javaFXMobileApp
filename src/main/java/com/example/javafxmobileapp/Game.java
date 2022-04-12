@@ -5,8 +5,9 @@ public class Game extends User {
 
 
     private Long gameId;
-    private String message;
-    private String playerOne ;
+    private String messageOne;
+    private String messageTwo;
+        private String playerOne ;
     private String playerTwo ;
     private String result;
     private String choiceOne;
@@ -29,9 +30,10 @@ public class Game extends User {
 
 
 
-    public Game(String message, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo,String state) {
+    public Game(String messageOne,String messageTwo, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo,String state) {
 
-        this.message = message;
+        this.messageOne = messageOne;
+        this.messageTwo = messageTwo;
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         this.result = result;
@@ -48,12 +50,20 @@ public class Game extends User {
         this.gameId = gameId;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMessageOne() {
+        return messageOne;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessageOne(String messageOne) {
+        this.messageOne = messageOne;
+    }
+
+    public String getMessageTwo() {
+        return messageTwo;
+    }
+
+    public void setMessageTwo(String messageTwo) {
+        this.messageTwo = messageTwo;
     }
 
     public String getPlayerOne() {

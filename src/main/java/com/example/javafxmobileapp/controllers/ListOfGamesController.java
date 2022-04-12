@@ -19,6 +19,7 @@ public class ListOfGamesController extends SuperController {
 
 
 
+
     public ListView listView;
 
     public void initialize(){
@@ -48,15 +49,18 @@ public class ListOfGamesController extends SuperController {
 
 
 
+
             @Override
             public void changed(ObservableValue<? extends Game> observable, Game oldValue, Game newValue) {
                 // Your action here
 
                 if (!newValue.getResult().equals("")){
                     newValue.setState("Closed");
+
                 }
 
-                if (newValue.getResult().equals("")){
+
+           //     if (newValue.getResult().equals("")){
               //  System.out.println("Selected item: " + newValue);
 
                 // ändrar controller från super till gameController med type cast
@@ -65,9 +69,10 @@ public class ListOfGamesController extends SuperController {
                 gameController.setGame(newValue);
 
 
-                }
+             //   }
 
-                else System.out.println("Game Done");;
+
+
 
 
             }

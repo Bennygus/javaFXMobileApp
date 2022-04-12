@@ -88,7 +88,7 @@ public class InviteController extends SuperController {
 // ---------------------------Test Random end---------
 
 
-        Game startNewGame = new Game(TextAreaForMessageToPlayer.getText(),RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","","Active");
+        Game startNewGame = new Game(TextAreaForMessageToPlayer.getText(),"",RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","","Active");
 
         GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
 
@@ -114,6 +114,10 @@ public class InviteController extends SuperController {
 
     }
 
+    /**
+     *
+     * @param event randomInviteButton sets disable for username textField true/false when clicked.
+     */
     public void randomInviteButton(ActionEvent event) {
 
         if (randomButton.isSelected())
