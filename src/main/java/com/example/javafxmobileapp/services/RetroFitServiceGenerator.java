@@ -1,4 +1,4 @@
-package com.example.javafxmobileapp;
+package com.example.javafxmobileapp.services;
 
 
 
@@ -50,6 +50,7 @@ public class RetroFitServiceGenerator {
         }
         return retrofit.create(serviceClass);
     }
+
 
 
     public static <S> S createAuthService(Class<S> gameServiceClass) {

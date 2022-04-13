@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class SuperController {
 
     private Stage stage;
@@ -28,6 +29,11 @@ public class SuperController {
     }
 
 
+    /**
+     *
+     * @param viewName changeScene method take in String that change scene/stage by FXMLLoader in SuperController.
+     *                 Ex: string = "theName.fxml"
+     */
     public void changeScene(String viewName) {
         FXMLLoader fxmlLoader = new FXMLLoader(SuperController.class.getResource(viewName));
         Scene scene = null;
@@ -45,6 +51,13 @@ public class SuperController {
     }
 
 
+    /**
+     *
+     * @param viewName  takes in a String that change scene/stage by FXMLLoader in SuperController.
+     *      *                 Ex: string = "theName.fxml"
+     * @param dataObject takes an Object to be used for setGame method in GameController as either a new game or loaded game
+     * @return controller with a scene and dataObject or null if try and catch ain't working.
+     */
     public SuperController changeScene(String viewName,Object dataObject) {
         FXMLLoader fxmlLoader = new FXMLLoader(SuperController.class.getResource(viewName));
         Scene scene = null;

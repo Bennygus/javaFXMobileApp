@@ -52,8 +52,11 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="ButtonForGameToGoBack" fx:id="ButtonForGameToGoBack" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" text="Back" onAction="#ButtonForGameToGoBack" />
-            <Button id="ButtonForCloseGame" fx:id="ButtonForCloseGame" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" text="Close" onAction="#ButtonForCloseGame" />
+            <Button id="ButtonForGameToGoBack" fx:id="ButtonForGameToGoBack" mnemonicParsing="false" onAction="#ButtonForGameToGoBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="ButtonForCloseGame" fx:id="ButtonForCloseGame" mnemonicParsing="false" onAction="#ButtonForCloseGame" prefHeight="40.0" prefWidth="113.0" text="Close">
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin></Button>
          </children>
       </HBox>
    </bottom>
@@ -165,7 +168,7 @@
                <children>
                   <Label id="LabelForPlayerOneChoice" fx:id="LabelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text=" played " visible="false" />
                   <Label id="LabelForPlayerTwoChoice" fx:id="LabelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text=" played " visible="false" />
-                  <Label id="LabelForWinner" fx:id="LabelForWinner" alignment="CENTER" layoutX="133.0" layoutY="135.0" opacity="0.0" prefHeight="17.0" prefWidth="70.0" text="YOU WIN!" />
+                  <Label id="LabelForWinner" fx:id="LabelForWinner" alignment="CENTER" layoutY="135.0" opacity="0.0" prefHeight="17.0" prefWidth="335.0" text="YOU WIN!" />
                   <ImageView id="ImageViewForPlayerOneChoice" fx:id="ImageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../../../invite_friend.png" />
@@ -176,15 +179,15 @@
                         <Image url="@../../../pngwing.com.png" />
                      </image>
                   </ImageView>
-                  <Button id="ButtonForChanging" fx:id="ButtonForChanging" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
+                  <Button id="ButtonForChanging" fx:id="ButtonForChanging" disable="true" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
                </children>
             </AnchorPane>
          </center>
          <bottom>
             <AnchorPane prefHeight="212.0" prefWidth="335.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextArea id="TextAreaForReceiving" fx:id="TextAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
-                  <TextArea id="TextAreaForMessage" fx:id="TextAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
+                  <TextArea id="TextAreaForReceiving" fx:id="textAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
+                  <TextArea id="TextAreaForMessage" fx:id="textAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
                   <Button id="ButtonForSendingMessage" fx:id="ButtonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" onAction="#sendMessageToPlayer" prefHeight="42.0" prefWidth="97.0" text="Send Message" />
                </children>
             </AnchorPane>

@@ -9,10 +9,13 @@ module com.example.javafxmobileapp {
 
 
 
+
 //    opens com.example.javafxmobileapp to javafx.fxml, javafx.graphics;
     opens com.example.javafxmobileapp.controllers to javafx.fxml,javafx.graphics;
     opens com.example.javafxmobileapp;
 
     exports com.example.javafxmobileapp;
+    exports com.example.javafxmobileapp.services;
+    opens com.example.javafxmobileapp.services;
 
 }

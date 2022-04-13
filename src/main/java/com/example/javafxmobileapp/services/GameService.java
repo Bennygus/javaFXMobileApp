@@ -1,11 +1,15 @@
-package com.example.javafxmobileapp;
+package com.example.javafxmobileapp.services;
 
+import com.example.javafxmobileapp.Game;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.*;
 
 import java.util.List;
 
+/**
+ *  Service to call for getting,posting/creating or update a game object.
+ */
 public interface GameService {
 
 

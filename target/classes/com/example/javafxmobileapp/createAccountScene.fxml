@@ -34,6 +34,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -41,7 +42,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.PasswordField?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.CreateAccountController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -61,9 +61,9 @@
                <center>
                   <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
+                        <TextField id="createDisplayNameTextField" fx:id="createDisplayNameTextField" promptText="Username:" />
+                        <PasswordField id="createUserPasswordTextField" fx:id="createUserPasswordTextField" promptText="Password:" />
                         <TextField id="createUserEmailTextField" fx:id="createUserEmailTextField" promptText="Email:" />
-                        <PasswordField id="createUserPasswordTextField" fx:id="createUserPasswordTextField" promptText="Pass:" />
-                        <TextField id="createDisplayNameTextField" fx:id="createDisplayNameTextField" promptText="DisplaName" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <Button id="createUserAccountButton" mnemonicParsing="false" onAction="#logInButton" text="Create">
@@ -90,6 +90,11 @@
       <HBox prefHeight="38.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
             <Button id="goBackNavigationButtonToLoginScene" onAction="#GoBackToLoginScene" prefHeight="40.0" prefWidth="110.0" text="back" />
+            <Button id="ButtonForCloseInCreateAccount" fx:id="ButtonForCloseInCreateAccount" mnemonicParsing="false" onAction="#ButtonForCloseInCreateAccount" prefHeight="40.0" prefWidth="113.0" text="Close">
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </bottom>

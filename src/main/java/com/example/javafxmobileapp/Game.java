@@ -1,19 +1,22 @@
 package com.example.javafxmobileapp;
 
+
+/**
+ * Game class used to post, put and get game info in Game object.
+ */
 public class Game extends User {
-
-
 
     private Long gameId;
     private String messageOne;
     private String messageTwo;
-        private String playerOne ;
+    private String playerOne ;
     private String playerTwo ;
     private String result;
     private String choiceOne;
     private String choiceTwo;
     private String state;
 
+    // for list in ListOfGames scene
     @Override
     public String toString() {
 
@@ -26,8 +29,6 @@ public class Game extends User {
 
     public Game() {
     }
-
-
 
 
     public Game(String messageOne,String messageTwo, String playerOne, String playerTwo, String result, String choiceOne,String choiceTwo,String state) {
@@ -112,5 +113,10 @@ public class Game extends User {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+
+    public boolean checkIfTie(String choiceOne, String choiceTwo) {
+        return choiceOne.equals(choiceTwo);
     }
 }

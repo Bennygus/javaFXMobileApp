@@ -1,5 +1,8 @@
 package com.example.javafxmobileapp;
 
+/**
+ * User class used to create and confirm user info in User object.
+ */
 public class User {
 
     private Long id;
@@ -7,9 +10,14 @@ public class User {
     private String name;
     private String password;
 
-    public User() {
+        public User() {
     }
-
+    /**
+     *
+     * @param email needed for creating account.
+     * @param name  username for logging-in.
+     * @param password for confirming right user try logging in on right username and password.
+     */
     public User(String email, String name, String password) {
         this.email = email;
         this.name = name;

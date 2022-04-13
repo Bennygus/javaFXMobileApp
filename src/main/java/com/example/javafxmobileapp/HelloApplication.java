@@ -7,8 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
 
+/**
+ * Set Header text for log-in and a stage for the log-in scene when running the application.
+ */
+public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -23,7 +26,7 @@ public class HelloApplication extends Application {
 
 
 
-        stage.setTitle("Sten,Sax och Påse");
+        stage.setTitle("Rock,Paper and Scissor");
 
      superController.setStage(stage);
 

@@ -1,10 +1,10 @@
 package com.example.javafxmobileapp.controllers;
 
-import com.example.javafxmobileapp.RetroFitServiceGenerator;
+import com.example.javafxmobileapp.services.RetroFitServiceGenerator;
 import com.example.javafxmobileapp.SuperController;
 
 import com.example.javafxmobileapp.Text;
-import com.example.javafxmobileapp.UserService;
+import com.example.javafxmobileapp.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 

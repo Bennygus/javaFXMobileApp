@@ -2,6 +2,9 @@ package com.example.javafxmobileapp.controllers;
 
 import com.example.javafxmobileapp.*;
 
+import com.example.javafxmobileapp.services.GameService;
+import com.example.javafxmobileapp.services.RetroFitServiceGenerator;
+import com.example.javafxmobileapp.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -10,7 +13,6 @@ import retrofit2.Response;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 
@@ -114,10 +116,10 @@ public class InviteController extends SuperController {
 
     }
 
-    /**
-     *
-     * @param event randomInviteButton sets disable for username textField true/false when clicked.
-     */
+//    /**
+//     *
+//     * @param event randomInviteButton sets disable for username textField true/false when clicked.
+//     */
     public void randomInviteButton(ActionEvent event) {
 
         if (randomButton.isSelected())

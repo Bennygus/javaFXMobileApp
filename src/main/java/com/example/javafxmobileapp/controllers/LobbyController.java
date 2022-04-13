@@ -1,8 +1,8 @@
 package com.example.javafxmobileapp.controllers;
 
 import com.example.javafxmobileapp.Game;
-import com.example.javafxmobileapp.GameService;
-import com.example.javafxmobileapp.RetroFitServiceGenerator;
+import com.example.javafxmobileapp.services.GameService;
+import com.example.javafxmobileapp.services.RetroFitServiceGenerator;
 import com.example.javafxmobileapp.SuperController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -35,8 +35,8 @@ public class LobbyController extends SuperController {
 
 
 
-        String comp = "computer";
-     Game startNewGame = new Game("","",RetroFitServiceGenerator.userName,"r","","",getComputerMove(),"");
+
+     Game startNewGame = new Game("","",RetroFitServiceGenerator.userName,"computer","","",getComputerMove(),"");
 
 
 
@@ -48,8 +48,13 @@ public class LobbyController extends SuperController {
         Call<Game> callSync = service.createGame(startNewGame);
 
         try {
-            changeScene("game.fxml");
             Response<Game> response = callSync.execute();
+
+            startNewGame = response.body();
+
+            assert startNewGame != null;
+            GameController  gameController = (GameController) changeScene("game.fxml",startNewGame);
+            gameController.setGame(startNewGame);
 
 
 
