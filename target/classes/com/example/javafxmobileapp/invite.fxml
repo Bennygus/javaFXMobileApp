@@ -48,17 +48,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.InviteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.InviteController">
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="ButtonGoBackToLobby" mnemonicParsing="false" onAction="#ButtonBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Go Back" />
-            <Button id="ButtonForCloseInviteGame" fx:id="ButtonForCloseInviteGame" minWidth="19.0" mnemonicParsing="false" onAction="#ButtonForCloseInviteGame" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="buttonGoBackToLobby" mnemonicParsing="false" onAction="#buttonBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Go Back" />
+            <Button id="buttonForCloseInviteGame" fx:id="buttonForCloseInviteGame" minWidth="19.0" mnemonicParsing="false" onAction="#buttonForCloseInviteGame" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>
             </Button>
-            <Button id="ButtonForSendInvite" fx:id="ButtonForSendInvite" mnemonicParsing="false" onAction="#ButtonForSendingInvite" prefHeight="40.0" prefWidth="110.0" text="Send">
+            <Button id="buttonForSendInvite" fx:id="buttonForSendInvite" mnemonicParsing="false" onAction="#buttonForSendingInvite" prefHeight="40.0" prefWidth="110.0" text="Send">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>
@@ -74,7 +74,7 @@
          <children>
             <AnchorPane prefHeight="475.0" prefWidth="100.0">
                <children>
-                  <RadioButton id="randomButton" fx:id="randomButton" layoutX="7.0" layoutY="140.0" mnemonicParsing="false" onAction="#randomInviteButton" text="Random" />
+                  <RadioButton id="randomButton" fx:id="randomButton" disable="true" layoutX="7.0" layoutY="140.0" mnemonicParsing="false" onAction="#randomInviteButton" text="Random" />
                </children>
             </AnchorPane>
          </children></VBox>
@@ -84,18 +84,18 @@
          <children>
             <VBox prefHeight="27.0" prefWidth="191.0">
                <children>
-                  <Text id="TextForHowManyRounds" strokeType="OUTSIDE" strokeWidth="0.0" text="How many Rounds?" />
+                  <Text id="textForHowManyRounds" strokeType="OUTSIDE" strokeWidth="0.0" text="How many Rounds?" />
                </children>
             </VBox>
             <HBox prefHeight="94.0" prefWidth="191.0">
                <children>
-                  <CheckBox fx:id="CheckboxOneWithNumberOneAsChoice" mnemonicParsing="false" onAction="#handleOneBox" selected="true" text="1 " />
-                  <CheckBox fx:id="CheckBoxTwoWithNumberThreeAsChoice" disable="true" mnemonicParsing="false" onAction="#handleThreeBox" text="3">
+                  <CheckBox fx:id="checkboxOneWithNumberOneAsChoice" mnemonicParsing="false" onAction="#handleOneBox" selected="true" text="1 " />
+                  <CheckBox fx:id="checkBoxTwoWithNumberThreeAsChoice" disable="true" mnemonicParsing="false" onAction="#handleThreeBox" text="3">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
                   </CheckBox>
-                  <CheckBox fx:id="CheckBoxThreeWithNumberFiveAsChoice" disable="true" mnemonicParsing="false" onAction="#handleFiveBox" text="5">
+                  <CheckBox fx:id="checkBoxThreeWithNumberFiveAsChoice" disable="true" mnemonicParsing="false" onAction="#handleFiveBox" text="5">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -106,8 +106,8 @@
                <children>
                   <VBox prefHeight="100.0" prefWidth="148.0">
                      <children>
-                        <Text id="TextChoosePlayer" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter player name" wrappingWidth="145.25390625" />
-                        <TextField id="ChoiceBoxForPLayers" fx:id="TextFieldForPLayers" prefHeight="27.0" prefWidth="152.0" promptText="Player name">
+                        <Text id="textChoosePlayer" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter player name" wrappingWidth="145.25390625" />
+                        <TextField id="choiceBoxForPLayers" fx:id="textFieldForPLayers" prefHeight="27.0" prefWidth="152.0" promptText="Player name">
                            <opaqueInsets>
                               <Insets top="5.0" />
                            </opaqueInsets>
@@ -118,8 +118,8 @@
             </HBox>
             <VBox prefHeight="102.0" prefWidth="148.0">
                <children>
-                  <Text id="TextMessageToPLayers" strokeType="OUTSIDE" strokeWidth="0.0" text="Message To Player" />
-                  <TextArea id="TextAreaForMessageToPlayer" fx:id="TextAreaForMessageToPlayer" prefHeight="86.0" prefWidth="148.0" promptText="Message:" wrapText="true" />
+                  <Text id="textMessageToPLayers" strokeType="OUTSIDE" strokeWidth="0.0" text="Message To Player" />
+                  <TextArea id="textAreaForMessageToPlayer" fx:id="textAreaForMessageToPlayer" prefHeight="86.0" prefWidth="148.0" promptText="Message:" wrapText="true" />
                </children>
             </VBox>
          </children>
@@ -130,14 +130,14 @@
          <children>
             <BorderPane prefHeight="99.0" prefWidth="335.0">
                <center>
-                  <Label id="LabelForInvite" contentDisplay="CENTER" prefHeight="35.0" prefWidth="67.0" text="Invite" textAlignment="JUSTIFY" BorderPane.alignment="CENTER">
+                  <Label id="labelForInvite" contentDisplay="CENTER" prefHeight="35.0" prefWidth="67.0" text="Invite" textAlignment="JUSTIFY" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </center>
                <right>
-                  <ImageView id="ImageViewForInviteFriendImage" fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <ImageView id="imageViewForInviteFriendImage" fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
                         <Image url="@../../../invite_friend.png" />
                      </image>

@@ -8,6 +8,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -19,7 +21,12 @@ public class ListOfGamesController extends SuperController {
 
 
 
+    @FXML
     public ListView listView;
+    @FXML
+    public Button ButtonForListOfGamesToGoBack;
+    @FXML
+    public Button ButtonForCloseTheGameInList;
 
     public void initialize(){
 
@@ -80,11 +87,11 @@ public class ListOfGamesController extends SuperController {
 
     }
 
-    public void ButtonForListOfGamesToGoBack(ActionEvent event) {
+    public void buttonForListOfGamesToGoBackOnAction(ActionEvent event) {
         changeScene("lobby.fxml");
     }
 
-    public void ButtonForCloseTheGameInList(ActionEvent event) {
+    public void buttonForCloseTheGameInListOnAction(ActionEvent event) {
         getStage().close();
     }
 }

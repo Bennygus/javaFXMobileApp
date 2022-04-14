@@ -5,6 +5,7 @@ import com.example.javafxmobileapp.services.RetroFitServiceGenerator;
 import com.example.javafxmobileapp.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import retrofit2.Call;
@@ -13,6 +14,8 @@ import retrofit2.Response;
 
 public class CreateAccountController extends SuperController {
 
+    @FXML
+    public Button buttonForCloseInCreateAccount;
     @FXML
     TextField createUserEmailTextField;
 
@@ -49,7 +52,7 @@ public class CreateAccountController extends SuperController {
 
     }
 
-    public void GoBackToLoginScene(ActionEvent actionEvent) {
+    public void goBackToLoginScene(ActionEvent actionEvent) {
 
 
         changeScene("loginScene.fxml");
@@ -57,7 +60,7 @@ public class CreateAccountController extends SuperController {
 
     }
 
-    public void ButtonForCloseInCreateAccount(ActionEvent event) {
+    public void buttonCloseInCreateAccountOnAction(ActionEvent event) {
         getStage().close();
     }
 }

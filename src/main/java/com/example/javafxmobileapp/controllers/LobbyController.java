@@ -15,6 +15,8 @@ public class LobbyController extends SuperController {
 
     public Button listaSpel;
 
+    public Button buttonCloseLobby;
+
     public static String getComputerMove()
     {
         String compMove;
@@ -69,17 +71,21 @@ public class LobbyController extends SuperController {
 
 
 
-    public void BackToLogInScreen(ActionEvent actionEvent) {
+    public void backToLogInScreen(ActionEvent actionEvent) {
 
         changeScene("loginScene.fxml");
     }
 
-    public void InviteToGame(ActionEvent actionEvent) {
+    public void inviteToGame(ActionEvent actionEvent) {
 
         changeScene("invite.fxml");
     }
 
     public void list(ActionEvent event) {
         changeScene("listOfGames.fxml");
+    }
+
+    public void buttonToCloseLobby(ActionEvent actionEvent) {
+        getStage().close();
     }
 }

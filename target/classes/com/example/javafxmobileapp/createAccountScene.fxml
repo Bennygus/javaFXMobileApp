@@ -89,8 +89,8 @@
    <bottom>
       <HBox prefHeight="38.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="goBackNavigationButtonToLoginScene" onAction="#GoBackToLoginScene" prefHeight="40.0" prefWidth="110.0" text="back" />
-            <Button id="ButtonForCloseInCreateAccount" fx:id="ButtonForCloseInCreateAccount" mnemonicParsing="false" onAction="#ButtonForCloseInCreateAccount" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="goBackNavigationButtonToLoginScene" onAction="#goBackToLoginScene" prefHeight="40.0" prefWidth="110.0" text="back" />
+            <Button id="buttonForCloseInCreateAccount" fx:id="buttonForCloseInCreateAccount" mnemonicParsing="false" onAction="#buttonCloseInCreateAccountOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>

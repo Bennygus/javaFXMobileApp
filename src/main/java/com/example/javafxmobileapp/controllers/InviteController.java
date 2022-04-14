@@ -19,31 +19,31 @@ import java.util.Random;
 public class InviteController extends SuperController {
 
     @FXML
-    public TextField TextFieldForPLayers;
+    public TextField textFieldForPLayers;
     @FXML
     public RadioButton randomButton;
 
     @FXML
-    CheckBox CheckboxOneWithNumberOneAsChoice;
+    CheckBox checkboxOneWithNumberOneAsChoice;
     @FXML
-    CheckBox CheckBoxTwoWithNumberThreeAsChoice;
+    CheckBox checkBoxTwoWithNumberThreeAsChoice;
     @FXML
-    CheckBox CheckBoxThreeWithNumberFiveAsChoice;
+    CheckBox checkBoxThreeWithNumberFiveAsChoice;
 
-
-    @FXML
-    TextArea TextAreaForMessageToPlayer;
 
     @FXML
-    public Button ButtonForSendInvite;
+    TextArea textAreaForMessageToPlayer;
+
+    @FXML
+    public Button buttonForSendInvite;
 
 
 
 
-    public void ButtonForSendingInvite(ActionEvent event) {
+    public void buttonForSendingInvite(ActionEvent event) {
 
 
-        String getPlayerNameTwo=  TextFieldForPLayers.getText();
+        String getPlayerNameTwo=  textFieldForPLayers.getText();
 
         //--------------------Test Random Radio Button-----------------------------------------
         if (randomButton.isSelected()){
@@ -90,7 +90,7 @@ public class InviteController extends SuperController {
 // ---------------------------Test Random end---------
 
 
-        Game startNewGame = new Game(TextAreaForMessageToPlayer.getText(),"",RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","","Active");
+        Game startNewGame = new Game(textAreaForMessageToPlayer.getText(),"",RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","","Active");
 
         GameService service = RetroFitServiceGenerator.createAuthService(GameService.class);
 
@@ -123,16 +123,16 @@ public class InviteController extends SuperController {
     public void randomInviteButton(ActionEvent event) {
 
         if (randomButton.isSelected())
-            TextFieldForPLayers.setDisable(true);
+            textFieldForPLayers.setDisable(true);
         if (!randomButton.isSelected()){
-            TextFieldForPLayers.setDisable(false);
+            textFieldForPLayers.setDisable(false);
         }
 
 
     }
 
 
-    public void ButtonBackToLobby(ActionEvent actionEvent) {
+    public void buttonBackToLobby(ActionEvent actionEvent) {
 
         changeScene("lobby.fxml");
     }
@@ -144,35 +144,35 @@ public class InviteController extends SuperController {
     private void handleOneBox(){
 
 
-        CheckboxOneWithNumberOneAsChoice.setSelected(true);
-        if (CheckboxOneWithNumberOneAsChoice.isSelected()) {
+        checkboxOneWithNumberOneAsChoice.setSelected(true);
+        if (checkboxOneWithNumberOneAsChoice.isSelected()) {
 
 
 
-            CheckBoxTwoWithNumberThreeAsChoice.setSelected(false);
-            CheckBoxThreeWithNumberFiveAsChoice.setSelected(false);
+            checkBoxTwoWithNumberThreeAsChoice.setSelected(false);
+            checkBoxThreeWithNumberFiveAsChoice.setSelected(false);
         }
     }
 
     @FXML
     private void handleThreeBox(){
-        if (CheckBoxTwoWithNumberThreeAsChoice.isSelected()) {
-            CheckboxOneWithNumberOneAsChoice.setSelected(false);
-            CheckBoxThreeWithNumberFiveAsChoice.setSelected(false);
+        if (checkBoxTwoWithNumberThreeAsChoice.isSelected()) {
+            checkboxOneWithNumberOneAsChoice.setSelected(false);
+            checkBoxThreeWithNumberFiveAsChoice.setSelected(false);
 
                     }
     }
 
     @FXML
     private void handleFiveBox(){
-        if ( CheckBoxThreeWithNumberFiveAsChoice.isSelected()) {
-            CheckboxOneWithNumberOneAsChoice.setSelected(false);
-            CheckBoxTwoWithNumberThreeAsChoice.setSelected(false);
+        if ( checkBoxThreeWithNumberFiveAsChoice.isSelected()) {
+            checkboxOneWithNumberOneAsChoice.setSelected(false);
+            checkBoxTwoWithNumberThreeAsChoice.setSelected(false);
         }
     }
 
 
-    public void ButtonForCloseInviteGame(ActionEvent event) {
+    public void buttonForCloseInviteGame(ActionEvent event) {
 
         getStage().close();
     }

@@ -27,41 +27,41 @@ public class GameController extends SuperController {
 
     //Top
     @FXML
-    public Pane PaneLeftForScore;
+    public Pane paneLeftForScore;
+    @FXML
+    public Text textOnLeftPaneForScore;
+    @FXML
+    public Label labelForPlayerOneAtScore;
+    @FXML
+    public Label labelForPlayerTwoAtScore;
+    @FXML
+    public Text textOnRightPaneForScore;
 
-    public Text TextOnLeftPaneForScore;
     @FXML
-    public Label LabelForPlayerOneAtScore;
+    public Button buttonForRock;
     @FXML
-    public Label LabelForPlayerTwoAtScore;
+    public Button buttonForPaper;
     @FXML
-    public Text TextOnRightPaneForScore;
-
-    @FXML
-    public Button ButtonForRock;
-    @FXML
-    public Button ButtonForPaper;
-    @FXML
-    public Button ButtonForScissor;
+    public Button buttonForScissor;
 
 
     //Middle
     @FXML
-    public Label LabelForPlayerOneChoice;
+    public Label labelForPlayerOneChoice;
 
     @FXML
-    public Label LabelForPlayerTwoChoice;
+    public Label labelForPlayerTwoChoice;
 
     @FXML
-    public ImageView ImageViewForPlayerOneChoice;
+    public ImageView imageViewForPlayerOneChoice;
 
     @FXML
-    public ImageView ImageViewForPlayerTwoChoice;
+    public ImageView imageViewForPlayerTwoChoice;
 
     @FXML
-    public Button ButtonForChanging;
+    public Button buttonForChanging;
     @FXML
-    public Label LabelForWinner;
+    public Label labelForWinner;
 
     //Bottom
 
@@ -70,14 +70,13 @@ public class GameController extends SuperController {
     @FXML
     public TextArea textAreaForMessage;
     @FXML
-    public Button ButtonForSendingMessage;
+    public Button buttonForSendingMessage;
     //TODO fix match result to switch button
 
-
     @FXML
-    public Button ButtonForGameToGoBack;
+    public Button buttonForGameToGoBack;
     @FXML
-    public Button ButtonForCloseGame;
+    public Button buttonForCloseGame;
     //för över vald game
     public void initialize(){
 
@@ -116,17 +115,17 @@ public class GameController extends SuperController {
         this.game = game;
 
         // Set name for the players next to the score one :Left two:right
-       LabelForPlayerOneAtScore.setText(game.getPlayerOne());
-       LabelForPlayerTwoAtScore.setText(game.getPlayerTwo());
+       labelForPlayerOneAtScore.setText(game.getPlayerOne());
+       labelForPlayerTwoAtScore.setText(game.getPlayerTwo());
 
 
        // getting result to closed games and disable the choice buttons
        if (!game.getResult().equals("")){
 
-           ButtonForRock.setDisable(true);
-           ButtonForPaper.setDisable(true);
-           ButtonForScissor.setDisable(true);
-           ButtonForSendingMessage.setDisable(true);
+           buttonForRock.setDisable(true);
+           buttonForPaper.setDisable(true);
+           buttonForScissor.setDisable(true);
+           buttonForSendingMessage.setDisable(true);
 
            match();
        }
@@ -165,28 +164,28 @@ public class GameController extends SuperController {
     }
 
 
-    public void ClickOnRockButton(ActionEvent event) {
+    public void clickOnRockButton(ActionEvent event) {
 
         setYourChoice(GameRules.ROCK);
 
-        ButtonForPaper.setDisable(true);
-        ButtonForScissor.setDisable(true);
+        buttonForPaper.setDisable(true);
+        buttonForScissor.setDisable(true);
 
     }
 
-    public void ClickOnPaperButton(ActionEvent event) {
+    public void clickOnPaperButton(ActionEvent event) {
         setYourChoice(GameRules.PAPER);
 
-        ButtonForRock.setDisable(true);
-        ButtonForScissor.setDisable(true);
+        buttonForRock.setDisable(true);
+        buttonForScissor.setDisable(true);
 
     }
 
-    public void ClickOnScissorButton(ActionEvent event) {
+    public void clickOnScissorButton(ActionEvent event) {
         setYourChoice(GameRules.SCISSOR);
 
-        ButtonForPaper.setDisable(true);
-        ButtonForRock.setDisable(true);
+        buttonForPaper.setDisable(true);
+        buttonForRock.setDisable(true);
     }
 
     /**
@@ -210,10 +209,10 @@ public class GameController extends SuperController {
 
 
                 //set players choice visible
-                LabelForPlayerOneChoice.setVisible(true);
-                LabelForPlayerOneChoice.setText(game.getPlayerOne() + " played " + game.getChoiceOne());
-                LabelForPlayerTwoChoice.setVisible(true);
-                LabelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
+                labelForPlayerOneChoice.setVisible(true);
+                labelForPlayerOneChoice.setText(game.getPlayerOne() + " played " + game.getChoiceOne());
+                labelForPlayerTwoChoice.setVisible(true);
+                labelForPlayerTwoChoice.setText(game.getPlayerTwo() + " played " + game.getChoiceTwo());
 
                 // rules and determine winner and show all choices and winner
                 match();
@@ -237,12 +236,12 @@ public class GameController extends SuperController {
     }
 
 
-    public void ButtonForGameToGoBackToLobby(ActionEvent event) {
+    public void buttonForGameToGoBackToLobby(ActionEvent event) {
 
         changeScene("lobby.fxml");
     }
 
-    public void ButtonForCloseGame(ActionEvent event) {
+    public void buttonForCloseGame(ActionEvent event) {
         getStage().close();
     }
 
@@ -251,23 +250,23 @@ public class GameController extends SuperController {
 
 
 
-        ImageViewForPlayerOneChoice.setVisible(true);
-        ImageViewForPlayerTwoChoice.setVisible(true);
+        imageViewForPlayerOneChoice.setVisible(true);
+        imageViewForPlayerTwoChoice.setVisible(true);
 
-        LabelForWinner.setOpacity(1);
+        labelForWinner.setOpacity(1);
 
         if (game.checkIfTie(game.getChoiceOne(), game.getChoiceTwo())){
 
-            LabelForWinner.setText("Tie!");
+            labelForWinner.setText("Tie!");
 
-            game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+            game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
 
             Image myImage = new Image(("/" + game.getChoiceOne() + ".jpg"));
 
 
-            ImageViewForPlayerOneChoice.setImage(myImage);
-            ImageViewForPlayerTwoChoice.setImage(myImage);
+            imageViewForPlayerOneChoice.setImage(myImage);
+            imageViewForPlayerTwoChoice.setImage(myImage);
 
         }
 
@@ -275,32 +274,32 @@ public class GameController extends SuperController {
 
             if (game.getChoiceTwo().equals(GameRules.PAPER)) {
 
-                LabelForWinner.setText(game.getPlayerTwo() +
+                labelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
-                TextOnRightPaneForScore.setText("1");
+                textOnRightPaneForScore.setText("1");
 
-                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+                game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
                 Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
-                ImageViewForPlayerTwoChoice.setImage(myImage);
+                imageViewForPlayerTwoChoice.setImage(myImage);
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-                ImageViewForPlayerOneChoice.setImage(myImage2);
+                imageViewForPlayerOneChoice.setImage(myImage2);
 
 
 
             } else {
-                LabelForWinner.setText(game.getPlayerOne() + " Wins!");
-                TextOnLeftPaneForScore.setText("1");
+                labelForWinner.setText(game.getPlayerOne() + " Wins!");
+                textOnLeftPaneForScore.setText("1");
 
-                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+                game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-                ImageViewForPlayerOneChoice.setImage(myImage2);
+                imageViewForPlayerOneChoice.setImage(myImage2);
 
 
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
-                ImageViewForPlayerTwoChoice.setImage(myImage3);
+                imageViewForPlayerTwoChoice.setImage(myImage3);
 
             }
 
@@ -308,31 +307,31 @@ public class GameController extends SuperController {
         else if (game.getChoiceOne().equals(GameRules.PAPER)){
 
             if (game.getChoiceTwo().equals(GameRules.SCISSOR)) {
-                LabelForWinner.setText(game.getPlayerTwo() +
+                labelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
-                TextOnRightPaneForScore.setText("1");
+                textOnRightPaneForScore.setText("1");
 
-                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+                game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
                 Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
-                ImageViewForPlayerTwoChoice.setImage(myImage);
+                imageViewForPlayerTwoChoice.setImage(myImage);
 
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-                ImageViewForPlayerOneChoice.setImage(myImage2);
+                imageViewForPlayerOneChoice.setImage(myImage2);
 
             } else {
-                LabelForWinner.setText(game.getPlayerOne() + " Wins!");
-                TextOnLeftPaneForScore.setText("1");
+                labelForWinner.setText(game.getPlayerOne() + " Wins!");
+                textOnLeftPaneForScore.setText("1");
 
-                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+                game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-                ImageViewForPlayerOneChoice.setImage(myImage2);
+                imageViewForPlayerOneChoice.setImage(myImage2);
 
 
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
-                ImageViewForPlayerTwoChoice.setImage(myImage3);
+                imageViewForPlayerTwoChoice.setImage(myImage3);
 
 
             }
@@ -342,31 +341,31 @@ public class GameController extends SuperController {
         else if (game.getChoiceOne().equals(GameRules.SCISSOR)){
 
             if (game.getChoiceTwo().equals(GameRules.ROCK)) {
-                LabelForWinner.setText(game.getPlayerTwo() +
+                labelForWinner.setText(game.getPlayerTwo() +
                         " Wins!");
-                TextOnRightPaneForScore.setText("1");
+                textOnRightPaneForScore.setText("1");
 
-                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+                game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
                 Image myImage = new Image(("/" + game.getChoiceTwo() + ".jpg"));
-                ImageViewForPlayerTwoChoice.setImage(myImage);
+                imageViewForPlayerTwoChoice.setImage(myImage);
 
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-                ImageViewForPlayerOneChoice.setImage(myImage2);
+                imageViewForPlayerOneChoice.setImage(myImage2);
 
             } else  {
-                LabelForWinner.setText(game.getPlayerOne() + " Wins!");
-                TextOnLeftPaneForScore.setText("1");
+                labelForWinner.setText(game.getPlayerOne() + " Wins!");
+                textOnLeftPaneForScore.setText("1");
 
-                game.setResult( TextOnLeftPaneForScore.getText() + " - " + TextOnRightPaneForScore.getText());
+                game.setResult( textOnLeftPaneForScore.getText() + " - " + textOnRightPaneForScore.getText());
 
                 Image myImage2 = new Image(("/" + game.getChoiceOne() + ".jpg"));
-                ImageViewForPlayerOneChoice.setImage(myImage2);
+                imageViewForPlayerOneChoice.setImage(myImage2);
 
 
                 Image myImage3 = new Image(("/" + game.getChoiceTwo()+ ".jpg"));
-                ImageViewForPlayerTwoChoice.setImage(myImage3);
+                imageViewForPlayerTwoChoice.setImage(myImage3);
 
             }
 

@@ -6,7 +6,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * Making load stage take up less code by calling changeScene method instead from SuperController
+ */
 public class SuperController {
 
     private Stage stage;

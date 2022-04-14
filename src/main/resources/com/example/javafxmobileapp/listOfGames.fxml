@@ -52,8 +52,8 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="ButtonForListOfGamesToGoBack" fx:id="ButtonForListOfGamesToGoBack" mnemonicParsing="false" onAction="#ButtonForListOfGamesToGoBack" prefHeight="40.0" prefWidth="110.0" text="Back" />
-            <Button id="ButtonForCloseTheGameInList" fx:id="ButtonForCloseTheGameInList" mnemonicParsing="false" onAction="#ButtonForCloseTheGameInList" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="buttonForListOfGamesToGoBack" fx:id="ButtonForListOfGamesToGoBack" mnemonicParsing="false" onAction="#buttonForListOfGamesToGoBackOnAction" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="buttonForCloseTheGameInList" fx:id="ButtonForCloseTheGameInList" mnemonicParsing="false" onAction="#buttonForCloseTheGameInListOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>
@@ -64,7 +64,7 @@
    <top>
       <AnchorPane prefHeight="65.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Label id="LabelListOfGames" fx:id="LabelListOfGames" alignment="CENTER" layoutY="24.0" prefHeight="18.0" prefWidth="335.0" text="List of Games">
+            <Label id="labelListOfGames" fx:id="labelListOfGames" alignment="CENTER" layoutY="24.0" prefHeight="18.0" prefWidth="335.0" text="List of Games">
                <font>
                   <Font size="21.0" />
                </font>
