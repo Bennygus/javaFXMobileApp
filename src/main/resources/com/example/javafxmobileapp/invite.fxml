@@ -52,13 +52,13 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonGoBackToLobby" mnemonicParsing="false" onAction="#buttonBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Go Back" />
-            <Button id="buttonForCloseInviteGame" fx:id="buttonForCloseInviteGame" minWidth="19.0" mnemonicParsing="false" onAction="#buttonForCloseInviteGame" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="buttonGoBackToLobby" mnemonicParsing="false" onAction="#buttonBackToLobbyOnAction" prefHeight="40.0" prefWidth="110.0" text="Go Back" />
+            <Button id="buttonForCloseInviteGame" fx:id="buttonForCloseInviteGame" minWidth="19.0" mnemonicParsing="false" onAction="#buttonForCloseInviteGameOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>
             </Button>
-            <Button id="buttonForSendInvite" fx:id="buttonForSendInvite" mnemonicParsing="false" onAction="#buttonForSendingInvite" prefHeight="40.0" prefWidth="110.0" text="Send">
+            <Button id="buttonForSendInvite" fx:id="buttonForSendInvite" mnemonicParsing="false" onAction="#buttonForSendingInviteOnAction" prefHeight="40.0" prefWidth="110.0" text="Send">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>
@@ -74,7 +74,7 @@
          <children>
             <AnchorPane prefHeight="475.0" prefWidth="100.0">
                <children>
-                  <RadioButton id="randomButton" fx:id="randomButton" disable="true" layoutX="7.0" layoutY="140.0" mnemonicParsing="false" onAction="#randomInviteButton" text="Random" />
+                  <RadioButton id="randomButton" fx:id="randomButton" disable="true" layoutX="7.0" layoutY="140.0" mnemonicParsing="false" onAction="#randomInviteButtonOnAction" text="Random" />
                </children>
             </AnchorPane>
          </children></VBox>

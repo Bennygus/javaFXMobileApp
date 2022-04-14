@@ -27,7 +27,7 @@ public class CreateAccountController extends SuperController {
 
 
 
-    public void logInButton(ActionEvent actionEvent) {
+    public void logInButtonOnAction(ActionEvent actionEvent) {
 
        User user = new User(createUserEmailTextField.getText(),createDisplayNameTextField.getText(),createUserPasswordTextField.getText());
 
@@ -52,7 +52,7 @@ public class CreateAccountController extends SuperController {
 
     }
 
-    public void goBackToLoginScene(ActionEvent actionEvent) {
+    public void goBackToLoginSceneOnAction(ActionEvent actionEvent) {
 
 
         changeScene("loginScene.fxml");

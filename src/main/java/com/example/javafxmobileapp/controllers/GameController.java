@@ -146,7 +146,7 @@ public class GameController extends SuperController {
 
 
     //TODO fix sendMessage to work like a chat
-    public void sendMessageToPlayer(ActionEvent dddd) {
+    public void sendMessageToPlayerOnAction(ActionEvent dddd) {
 
         textAreaForReceiving.setText(textAreaForMessage.getText());
 
@@ -164,7 +164,7 @@ public class GameController extends SuperController {
     }
 
 
-    public void clickOnRockButton(ActionEvent event) {
+    public void clickOnRockButtonOnAction(ActionEvent event) {
 
         setYourChoice(GameRules.ROCK);
 
@@ -173,7 +173,7 @@ public class GameController extends SuperController {
 
     }
 
-    public void clickOnPaperButton(ActionEvent event) {
+    public void clickOnPaperButtonOnAction(ActionEvent event) {
         setYourChoice(GameRules.PAPER);
 
         buttonForRock.setDisable(true);
@@ -181,7 +181,7 @@ public class GameController extends SuperController {
 
     }
 
-    public void clickOnScissorButton(ActionEvent event) {
+    public void clickOnScissorButtonOnAction(ActionEvent event) {
         setYourChoice(GameRules.SCISSOR);
 
         buttonForPaper.setDisable(true);
@@ -236,16 +236,16 @@ public class GameController extends SuperController {
     }
 
 
-    public void buttonForGameToGoBackToLobby(ActionEvent event) {
+    public void buttonForGameToGoBackToLobbyOnAction(ActionEvent event) {
 
         changeScene("lobby.fxml");
     }
 
-    public void buttonForCloseGame(ActionEvent event) {
+    public void buttonForCloseGameOnAction(ActionEvent event) {
         getStage().close();
     }
 
-    //TODO Transfer to GameRules and write better code!
+    //TODO Transfer to GameRules and write better code and change wins! text to a constant!
     public void match(){
 
 

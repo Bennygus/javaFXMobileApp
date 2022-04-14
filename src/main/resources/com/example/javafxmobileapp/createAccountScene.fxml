@@ -66,7 +66,7 @@
                         <TextField id="createUserEmailTextField" fx:id="createUserEmailTextField" promptText="Email:" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button id="createUserAccountButton" mnemonicParsing="false" onAction="#logInButton" text="Create">
+                              <Button id="createUserAccountButton" mnemonicParsing="false" onAction="#logInButtonOnAction" text="Create">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -89,7 +89,7 @@
    <bottom>
       <HBox prefHeight="38.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="goBackNavigationButtonToLoginScene" onAction="#goBackToLoginScene" prefHeight="40.0" prefWidth="110.0" text="back" />
+            <Button id="goBackNavigationButtonToLoginScene" onAction="#goBackToLoginSceneOnAction" prefHeight="40.0" prefWidth="110.0" text="back" />
             <Button id="buttonForCloseInCreateAccount" fx:id="buttonForCloseInCreateAccount" mnemonicParsing="false" onAction="#buttonCloseInCreateAccountOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />

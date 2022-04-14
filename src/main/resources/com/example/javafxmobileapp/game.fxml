@@ -52,8 +52,8 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonForGameToGoBack" fx:id="buttonForGameToGoBack" mnemonicParsing="false" onAction="#buttonForGameToGoBackToLobby" prefHeight="40.0" prefWidth="110.0" text="Back" />
-            <Button id="buttonForCloseGame" fx:id="buttonForCloseGame" mnemonicParsing="false" onAction="#buttonForCloseGame" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="buttonForGameToGoBack" fx:id="buttonForGameToGoBack" mnemonicParsing="false" onAction="#buttonForGameToGoBackToLobbyOnAction" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="buttonForCloseGame" fx:id="buttonForCloseGame" mnemonicParsing="false" onAction="#buttonForCloseGameOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin></Button>
@@ -145,17 +145,17 @@
          <top>
             <HBox prefHeight="70.0" prefWidth="335.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="buttonForRock" fx:id="buttonForRock" mnemonicParsing="false" onAction="#clickOnRockButton" prefHeight="65.0" prefWidth="100.0" text="Rock">
+                  <Button id="buttonForRock" fx:id="buttonForRock" mnemonicParsing="false" onAction="#clickOnRockButtonOnAction" prefHeight="65.0" prefWidth="100.0" text="Rock">
                      <HBox.margin>
                         <Insets left="7.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="buttonForPaper" fx:id="buttonForPaper" mnemonicParsing="false" onAction="#clickOnPaperButton" prefHeight="65.0" prefWidth="100.0" text="Paper">
+                  <Button id="buttonForPaper" fx:id="buttonForPaper" mnemonicParsing="false" onAction="#clickOnPaperButtonOnAction" prefHeight="65.0" prefWidth="100.0" text="Paper">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="buttonForScissor" fx:id="buttonForScissor" mnemonicParsing="false" onAction="#clickOnScissorButton" prefHeight="66.0" prefWidth="100.0" text="Scissor">
+                  <Button id="buttonForScissor" fx:id="buttonForScissor" mnemonicParsing="false" onAction="#clickOnScissorButtonOnAction" prefHeight="66.0" prefWidth="100.0" text="Scissor">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
@@ -188,7 +188,7 @@
                <children>
                   <TextArea id="textAreaForReceiving" fx:id="textAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
                   <TextArea id="textAreaForMessage" fx:id="textAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
-                  <Button id="buttonForSendingMessage" fx:id="buttonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" onAction="#sendMessageToPlayer" prefHeight="42.0" prefWidth="97.0" text="Send Message" />
+                  <Button id="buttonForSendingMessage" fx:id="buttonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" onAction="#sendMessageToPlayerOnAction" prefHeight="42.0" prefWidth="97.0" text="Send Message" />
                </children>
             </AnchorPane>
          </bottom>

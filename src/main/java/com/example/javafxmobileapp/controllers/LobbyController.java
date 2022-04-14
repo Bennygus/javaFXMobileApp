@@ -33,7 +33,7 @@ public class LobbyController extends SuperController {
         return compMove;
     }
 
-    public void gameAgainstComp(ActionEvent event){
+    public void gameAgainstCompOnAction(ActionEvent event){
 
 
 
@@ -71,21 +71,21 @@ public class LobbyController extends SuperController {
 
 
 
-    public void backToLogInScreen(ActionEvent actionEvent) {
+    public void backToLogInScreenOnAction(ActionEvent actionEvent) {
 
         changeScene("loginScene.fxml");
     }
 
-    public void inviteToGame(ActionEvent actionEvent) {
+    public void inviteToGameOnAction(ActionEvent actionEvent) {
 
         changeScene("invite.fxml");
     }
 
-    public void list(ActionEvent event) {
+    public void listOnAction(ActionEvent event) {
         changeScene("listOfGames.fxml");
     }
 
-    public void buttonToCloseLobby(ActionEvent actionEvent) {
+    public void buttonToCloseLobbyOnAction(ActionEvent actionEvent) {
         getStage().close();
     }
 }

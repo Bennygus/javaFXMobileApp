@@ -40,7 +40,7 @@ public class InviteController extends SuperController {
 
 
 
-    public void buttonForSendingInvite(ActionEvent event) {
+    public void buttonForSendingInviteOnAction(ActionEvent event) {
 
 
         String getPlayerNameTwo=  textFieldForPLayers.getText();
@@ -120,7 +120,7 @@ public class InviteController extends SuperController {
 //     *
 //     * @param event randomInviteButton sets disable for username textField true/false when clicked.
 //     */
-    public void randomInviteButton(ActionEvent event) {
+    public void randomInviteButtonOnAction(ActionEvent event) {
 
         if (randomButton.isSelected())
             textFieldForPLayers.setDisable(true);
@@ -132,7 +132,7 @@ public class InviteController extends SuperController {
     }
 
 
-    public void buttonBackToLobby(ActionEvent actionEvent) {
+    public void buttonBackToLobbyOnAction(ActionEvent actionEvent) {
 
         changeScene("lobby.fxml");
     }
@@ -172,7 +172,7 @@ public class InviteController extends SuperController {
     }
 
 
-    public void buttonForCloseInviteGame(ActionEvent event) {
+    public void buttonForCloseInviteGameOnAction(ActionEvent event) {
 
         getStage().close();
     }

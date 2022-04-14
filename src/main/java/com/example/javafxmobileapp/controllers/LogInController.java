@@ -30,7 +30,7 @@ public class LogInController extends SuperController {
 
 
 
-    public void logInButton(ActionEvent actionEvent) {
+    public void logInButtonOnAction(ActionEvent actionEvent) {
 
 
         UserService service =  RetroFitServiceGenerator.createService(UserService.class,userLoginEmailTextField.getText() , userLoginPasswordTextField.getText());
@@ -61,7 +61,7 @@ public class LogInController extends SuperController {
     }
 
 
-    public void newAccount(ActionEvent actionEvent) {
+    public void newAccountOnAction(ActionEvent actionEvent) {
 
        changeScene("createAccountScene.fxml");
 
@@ -69,7 +69,7 @@ public class LogInController extends SuperController {
 
 
 
-    public void buttonForCloseGameInLogin(ActionEvent actionEvent) {
+    public void buttonForCloseGameInLoginOnAction(ActionEvent actionEvent) {
 
         getStage().close();
 

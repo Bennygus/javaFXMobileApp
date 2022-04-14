@@ -115,7 +115,7 @@ public class Game extends User {
         this.state = state;
     }
 
-
+    // to be able to make a test since test on javaFX needs to be integrated with grafik.
     public boolean checkIfTie(String choiceOne, String choiceTwo) {
         return choiceOne.equals(choiceTwo);
     }

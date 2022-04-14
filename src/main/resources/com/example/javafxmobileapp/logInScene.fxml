@@ -73,7 +73,7 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="closeGameNavigationButton" mnemonicParsing="false" onAction="#buttonForCloseGameInLogin" prefHeight="40.0" prefWidth="110.0" text="Back">
+            <Button id="closeGameNavigationButton" mnemonicParsing="false" onAction="#buttonForCloseGameInLoginOnAction" prefHeight="40.0" prefWidth="110.0" text="Back">
                <HBox.margin>
                   <Insets />
                </HBox.margin></Button>
@@ -96,8 +96,8 @@
                               <PasswordField fx:id="userLoginPasswordTextField" promptText="Password:" />
                               <HBox prefHeight="150.0" prefWidth="198.0">
                                  <children>
-                                    <Button id="logInButton" mnemonicParsing="false" onAction="#logInButton" text="Log in" />
-                                    <Button id="hyperLinkToNewAccount" onAction="#newAccount">
+                                    <Button id="logInButton" mnemonicParsing="false" onAction="#logInButtonOnAction" text="Log in" />
+                                    <Button id="hyperLinkToNewAccount" onAction="#newAccountOnAction">
                                        <graphic>
                                           <Text id="noAccountTextClickMe" fill="#2c15da" strokeType="OUTSIDE" strokeWidth="0.0" text="No Account?" wrappingWidth="78.98307228088379">
                                              <font>
