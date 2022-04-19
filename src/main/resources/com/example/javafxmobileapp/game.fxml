@@ -52,8 +52,8 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonForGameToGoBack" fx:id="buttonForGameToGoBack" mnemonicParsing="false" onAction="#buttonForGameToGoBackToLobbyOnAction" prefHeight="40.0" prefWidth="110.0" text="Back" />
-            <Button id="buttonForCloseGame" fx:id="buttonForCloseGame" mnemonicParsing="false" onAction="#buttonForCloseGameOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="ButtonForGameToGoBack" fx:id="buttonForGameToGoBack" mnemonicParsing="false" onAction="#buttonForGameToGoBackToLobbyOnAction" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="ButtonForCloseGame" fx:id="buttonForCloseGame" mnemonicParsing="false" onAction="#buttonForCloseGameOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin></Button>
@@ -78,9 +78,9 @@
                <children>
                   <AnchorPane prefHeight="60.0" prefWidth="336.0">
                      <children>
-                        <Pane id="borderPaneLeft" fx:id="paneLeftForScore" layoutY="-1.0" prefHeight="61.0" prefWidth="74.0" style="-fx-background-color: black; -fx-border-color: red;">
+                        <Pane id="BorderPaneLeft" fx:id="paneLeftForScore" layoutY="-1.0" prefHeight="61.0" prefWidth="74.0" style="-fx-background-color: black; -fx-border-color: red;">
                            <children>
-                              <Text id="textOnLeftPaneForScore" fx:id="textOnLeftPaneForScore" layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <Text id="TextOnLeftPaneForScore" fx:id="textOnLeftPaneForScore" layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font size="40.0" />
                                  </font>
@@ -105,12 +105,12 @@
                         </Pane>
                         <Pane layoutX="74.0" layoutY="-3.0" prefHeight="63.0" prefWidth="187.0" style="-fx-background-color: grey;">
                            <children>
-                              <Label id="labelForPlayerOneAtScore" fx:id="labelForPlayerOneAtScore" layoutX="14.0" layoutY="23.0" prefHeight="17.0" prefWidth="72.0" text="You" />
-                              <Label id="labelForPlayerTwoAtScore" fx:id="labelForPlayerTwoAtScore" layoutX="134.0" layoutY="23.0" prefHeight="17.0" prefWidth="43.0" text="Comp" />
+                              <Label id="LabelForPlayerOneAtScore" fx:id="labelForPlayerOneAtScore" layoutX="14.0" layoutY="23.0" prefHeight="17.0" prefWidth="72.0" text="You" />
+                              <Label id="LabelForPlayerTwoAtScore" fx:id="labelForPlayerTwoAtScore" layoutX="134.0" layoutY="23.0" prefHeight="17.0" prefWidth="43.0" text="Comp" />
                            </children></Pane>
                         <Pane layoutX="261.0" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: black; -fx-border-color: red;">
                            <children>
-                              <Text id="textOnRightPaneForScore" fx:id="textOnRightPaneForScore" layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <Text id="TextOnRightPaneForScore" fx:id="textOnRightPaneForScore" layoutX="27.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font size="40.0" />
                                  </font>
@@ -145,17 +145,17 @@
          <top>
             <HBox prefHeight="70.0" prefWidth="335.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="buttonForRock" fx:id="buttonForRock" mnemonicParsing="false" onAction="#clickOnRockButtonOnAction" prefHeight="65.0" prefWidth="100.0" text="Rock">
+                  <Button id="ButtonForRock" fx:id="buttonForRock" mnemonicParsing="false" onAction="#clickOnRockButtonOnAction" prefHeight="65.0" prefWidth="100.0" text="Rock">
                      <HBox.margin>
                         <Insets left="7.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="buttonForPaper" fx:id="buttonForPaper" mnemonicParsing="false" onAction="#clickOnPaperButtonOnAction" prefHeight="65.0" prefWidth="100.0" text="Paper">
+                  <Button id="ButtonForPaper" fx:id="buttonForPaper" mnemonicParsing="false" onAction="#clickOnPaperButtonOnAction" prefHeight="65.0" prefWidth="100.0" text="Paper">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="buttonForScissor" fx:id="buttonForScissor" mnemonicParsing="false" onAction="#clickOnScissorButtonOnAction" prefHeight="66.0" prefWidth="100.0" text="Scissor">
+                  <Button id="ButtonForScissor" fx:id="buttonForScissor" mnemonicParsing="false" onAction="#clickOnScissorButtonOnAction" prefHeight="66.0" prefWidth="100.0" text="Scissor">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
@@ -166,29 +166,29 @@
          <center>
             <AnchorPane prefHeight="249.0" prefWidth="346.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label id="labelForPlayerOneChoice" fx:id="labelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text=" played " visible="false" />
-                  <Label id="labelForPlayerTwoChoice" fx:id="labelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text=" played " visible="false" />
-                  <Label id="labelForWinner" fx:id="labelForWinner" alignment="CENTER" layoutY="135.0" opacity="0.0" prefHeight="17.0" prefWidth="335.0" text="YOU WIN!" />
-                  <ImageView id="imageViewForPlayerOneChoice" fx:id="imageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <Label id="LabelForPlayerOneChoice" fx:id="labelForPlayerOneChoice" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text=" played " visible="false" />
+                  <Label id="LabelForPlayerTwoChoice" fx:id="labelForPlayerTwoChoice" alignment="CENTER" layoutX="209.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text=" played " visible="false" />
+                  <Label id="LabelForWinner" fx:id="labelForWinner" alignment="CENTER" layoutY="135.0" opacity="0.0" prefHeight="17.0" prefWidth="335.0" text="YOU WIN!" />
+                  <ImageView id="ImageViewForPlayerOneChoice" fx:id="imageViewForPlayerOneChoice" fitHeight="55.0" fitWidth="55.0" layoutX="37.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../../../invite_friend.png" />
                      </image>
                   </ImageView>
-                  <ImageView id="imageViewForPlayerTwoChoice" fx:id="imageViewForPlayerTwoChoice" fitHeight="55.0" fitWidth="55.0" layoutX="238.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                  <ImageView id="ImageViewForPlayerTwoChoice" fx:id="imageViewForPlayerTwoChoice" fitHeight="55.0" fitWidth="55.0" layoutX="238.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../../../pngwing.com.png" />
                      </image>
                   </ImageView>
-                  <Button id="buttonForChanging" fx:id="buttonForChanging" disable="true" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
+                  <Button id="ButtonForChanging" fx:id="buttonForChanging" disable="true" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#changeOpacity" prefHeight="42.0" prefWidth="103.0" text="Result/Message" />
                </children>
             </AnchorPane>
          </center>
          <bottom>
             <AnchorPane prefHeight="212.0" prefWidth="335.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextArea id="textAreaForReceiving" fx:id="textAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
-                  <TextArea id="textAreaForMessage" fx:id="textAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
-                  <Button id="buttonForSendingMessage" fx:id="buttonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" onAction="#sendMessageToPlayerOnAction" prefHeight="42.0" prefWidth="97.0" text="Send Message" />
+                  <TextArea id="TextAreaForReceiving" fx:id="textAreaForReceiving" layoutX="14.0" layoutY="9.0" prefHeight="91.0" prefWidth="311.0" wrapText="true" />
+                  <TextArea id="TextAreaForMessage" fx:id="textAreaForMessage" layoutX="14.0" layoutY="111.0" prefHeight="76.0" prefWidth="200.0" promptText="Type:" wrapText="true" />
+                  <Button id="ButtonForSendingMessage" fx:id="buttonForSendingMessage" layoutX="225.0" layoutY="128.0" mnemonicParsing="false" onAction="#sendMessageToPlayerOnAction" prefHeight="42.0" prefWidth="97.0" text="Send Message" />
                </children>
             </AnchorPane>
          </bottom>

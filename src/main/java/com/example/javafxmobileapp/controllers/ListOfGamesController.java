@@ -43,9 +43,6 @@ public class ListOfGamesController extends SuperController {
          listView.setItems(FXCollections.observableList(response.body()));
 
 
-
-
-
         }
         catch (Exception e){
             System.out.println(e);
@@ -53,32 +50,19 @@ public class ListOfGamesController extends SuperController {
 
        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Game>() {
 
-
-
-
             @Override
             public void changed(ObservableValue<? extends Game> observable, Game oldValue, Game newValue) {
-                // Your action here
+
 
                 if (!newValue.getResult().equals("")){
                     newValue.setState("Closed");
 
                 }
 
-
-           //     if (newValue.getResult().equals("")){
-              //  System.out.println("Selected item: " + newValue);
-
                 // ändrar controller från super till gameController med type cast
                 GameController  gameController = (GameController) changeScene("game.fxml",newValue);
                 // upd game
                 gameController.setGame(newValue);
-
-
-             //   }
-
-
-
 
 
             }

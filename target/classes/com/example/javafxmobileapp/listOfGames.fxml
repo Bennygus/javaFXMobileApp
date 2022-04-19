@@ -52,8 +52,8 @@
    <bottom>
       <HBox prefHeight="40.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonForListOfGamesToGoBack" fx:id="ButtonForListOfGamesToGoBack" mnemonicParsing="false" onAction="#buttonForListOfGamesToGoBack" prefHeight="40.0" prefWidth="110.0" text="Back" />
-            <Button id="buttonForCloseTheGameInList" fx:id="ButtonForCloseTheGameInList" mnemonicParsing="false" onAction="#buttonForCloseTheGameInList" prefHeight="40.0" prefWidth="113.0" text="Close">
+            <Button id="buttonForListOfGamesToGoBack" fx:id="ButtonForListOfGamesToGoBack" mnemonicParsing="false" onAction="#buttonForListOfGamesToGoBackOnAction" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="buttonForCloseTheGameInList" fx:id="ButtonForCloseTheGameInList" mnemonicParsing="false" onAction="#buttonForCloseTheGameInListOnAction" prefHeight="40.0" prefWidth="113.0" text="Close">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>

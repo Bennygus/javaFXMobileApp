@@ -45,49 +45,12 @@ public class InviteController extends SuperController {
 
         String getPlayerNameTwo=  textFieldForPLayers.getText();
 
-        //--------------------Test Random Radio Button-----------------------------------------
+
         if (randomButton.isSelected()){
 
-            UserService userServiceToGetAllUsers = RetroFitServiceGenerator.createAuthService(UserService.class);
-            Call<List<String>> callMyUsers = userServiceToGetAllUsers.getAllUsers();
-
-
-                try {
-                    Response<List<String>> response = callMyUsers.execute();
-
-
-                    //TODO BAD RANDOM FIX! BAD SECURITY
-                    Random random = new Random();
-
-                    assert response.body() != null;
-
-                    int randomUser = random.nextInt(response.body().size()+1) ;
-//                   System.out.println(randomUser);
-//                   System.out.println(response.body().size());
-                    if (randomUser>6) {
-
-
-                        assert response.body() != null;
-                        getPlayerNameTwo = response.body().get(randomUser-1);
-                    }
-
-                    if (randomUser<6) {
-                        assert response.body() != null;
-
-                    //    System.out.println(randomUser);
-
-                        getPlayerNameTwo = response.body().get(randomUser);
-                    }
-
-
-                } catch (IOException e) {
-
-                    e.printStackTrace();
-
-                }
+            getPlayerNameTwo = getRandomPlayer(getPlayerNameTwo);
 
         }
-// ---------------------------Test Random end---------
 
 
         Game startNewGame = new Game(textAreaForMessageToPlayer.getText(),"",RetroFitServiceGenerator.userName,getPlayerNameTwo,"","","","Active");
@@ -116,7 +79,45 @@ public class InviteController extends SuperController {
 
     }
 
-//    /**
+
+
+
+    private String getRandomPlayer(String getPlayerNameTwo) {
+
+        UserService userServiceToGetAllUsers = RetroFitServiceGenerator.createAuthService(UserService.class);
+        Call<List<String>> callMyUsers = userServiceToGetAllUsers.getAllUsers();
+
+
+        try {
+            Response<List<String>> response = callMyUsers.execute();
+
+
+           while (true) {
+               Random random = new Random();
+
+               assert response.body() != null;
+
+               int randomUser = random.nextInt(response.body().size());
+
+               String name = response.body().get(randomUser);
+
+               if (!name.equals(RetroFitServiceGenerator.userName)) {
+
+
+                   getPlayerNameTwo = response.body().get(randomUser);
+                   break;
+               }
+
+           }
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+        return getPlayerNameTwo;
+    }
+
+    //    /**
 //     *
 //     * @param event randomInviteButton sets disable for username textField true/false when clicked.
 //     */
@@ -139,7 +140,7 @@ public class InviteController extends SuperController {
 
 
 
-
+    //TODO better code (fix this method to be usable in a later stage! to be able to play more than one round)
     @FXML
     private void handleOneBox(){
 

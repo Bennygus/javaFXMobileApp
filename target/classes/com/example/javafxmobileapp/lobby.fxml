@@ -71,8 +71,8 @@
    <bottom>
       <HBox prefHeight="39.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonForBackToLogInScreen" mnemonicParsing="false" onAction="#backToLogInScreen" prefHeight="40.0" prefWidth="110.0" text="Back" />
-            <Button id="buttonCloseLobby" fx:id="buttonCloseLobby" mnemonicParsing="false" onAction="#buttonToCloseLobby" prefHeight="40.0" prefWidth="113.0" text="Close" />
+            <Button id="buttonForBackToLogInScreen" mnemonicParsing="false" onAction="#backToLogInScreenOnAction" prefHeight="40.0" prefWidth="110.0" text="Back" />
+            <Button id="buttonCloseLobby" fx:id="buttonCloseLobby" mnemonicParsing="false" onAction="#buttonToCloseLobbyOnAction" prefHeight="40.0" prefWidth="113.0" text="Close" />
          </children>
       </HBox>
    </bottom>
@@ -82,17 +82,17 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonForPlayOffline" contentDisplay="CENTER" mnemonicParsing="false" onAction="#gameAgainstComp" prefHeight="35.0" prefWidth="110.0" text="Play offline">
+            <Button id="buttonForPlayOffline" contentDisplay="CENTER" mnemonicParsing="false" onAction="#gameAgainstCompOnAction" prefHeight="35.0" prefWidth="110.0" text="Play offline">
                <VBox.margin>
                   <Insets bottom="2.0" left="12.0" right="5.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <Button id="buttonForInviteFriend" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inviteToGame" prefHeight="35.0" prefWidth="110.0" text="Invite">
+            <Button id="buttonForInviteFriend" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inviteToGameOnAction" prefHeight="35.0" prefWidth="110.0" text="Invite">
                <VBox.margin>
                   <Insets bottom="2.0" left="12.0" right="5.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="listaSpel" contentDisplay="CENTER" mnemonicParsing="false" onAction="#list" prefHeight="35.0" prefWidth="110.0" text="Game list">
+            <Button fx:id="listaSpel" contentDisplay="CENTER" mnemonicParsing="false" onAction="#listOnAction" prefHeight="35.0" prefWidth="110.0" text="Game list">
                <VBox.margin>
                   <Insets bottom="2.0" left="12.0" right="5.0" top="10.0" />
                </VBox.margin>

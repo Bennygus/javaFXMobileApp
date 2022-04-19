@@ -1,6 +1,7 @@
 package com.example.javafxmobileapp.controllers;
 
 import com.example.javafxmobileapp.Game;
+import com.example.javafxmobileapp.GameChoice;
 import com.example.javafxmobileapp.services.GameService;
 import com.example.javafxmobileapp.services.RetroFitServiceGenerator;
 import com.example.javafxmobileapp.SuperController;
@@ -23,11 +24,11 @@ public class LobbyController extends SuperController {
         Random random = new Random();
         int input = random.nextInt(3)+1;
         if (input == 1)
-            compMove = "Rock";
+            compMove = GameChoice.ROCK.toString();
         else if(input == 2)
-            compMove = "Paper";
+            compMove = GameChoice.PAPER.toString();
         else
-            compMove = "Scissor";
+            compMove = GameChoice.SCISSOR.toString();
 
 
         return compMove;

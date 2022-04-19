@@ -6,10 +6,13 @@ import com.example.javafxmobileapp.SuperController;
 import com.example.javafxmobileapp.Text;
 import com.example.javafxmobileapp.services.UserService;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+
 
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
 
 
 import retrofit2.Call;
@@ -74,4 +77,5 @@ public class LogInController extends SuperController {
         getStage().close();
 
     }
+
 }

@@ -34,6 +34,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -42,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.CreateAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxmobileapp.controllers.CreateAccountController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -64,15 +65,16 @@
                         <TextField id="createDisplayNameTextField" fx:id="createDisplayNameTextField" promptText="Username:" />
                         <PasswordField id="createUserPasswordTextField" fx:id="createUserPasswordTextField" promptText="Password:" />
                         <TextField id="createUserEmailTextField" fx:id="createUserEmailTextField" promptText="Email:" />
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox prefHeight="54.0" prefWidth="219.0">
                            <children>
-                              <Button id="createUserAccountButton" mnemonicParsing="false" onAction="#logInButtonOnAction" text="Create">
+                              <Button id="createUserAccountButton" mnemonicParsing="false" onAction="#createButtonOnAction" text="Create">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </Button>
                            </children>
                         </HBox>
+                        <Label id="labelForAccount" fx:id="labelAccountConfirmationExist" contentDisplay="CENTER" prefHeight="17.0" prefWidth="223.0" text="Account created!" visible="false" />
                      </children>
                   </VBox>
                </center>
@@ -81,7 +83,16 @@
       </VBox>
    </center>
    <left>
-      <VBox prefHeight="500.0" prefWidth="58.0" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="500.0" prefWidth="58.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label disable="true" layoutX="15.0" layoutY="4.0" text="Name:" />
+                  <Label disable="true" layoutX="15.0" layoutY="29.0" text="Pass:" />
+                  <Label disable="true" layoutX="15.0" layoutY="55.0" text="Email:" />
+               </children>
+            </AnchorPane>
+         </children></VBox>
    </left>
    <right>
       <VBox prefHeight="500.0" prefWidth="58.0" BorderPane.alignment="CENTER" />

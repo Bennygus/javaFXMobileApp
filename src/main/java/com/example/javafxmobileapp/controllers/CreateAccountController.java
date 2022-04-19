@@ -6,6 +6,7 @@ import com.example.javafxmobileapp.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import retrofit2.Call;
@@ -16,6 +17,7 @@ public class CreateAccountController extends SuperController {
 
     @FXML
     public Button buttonForCloseInCreateAccount;
+    public Label labelAccountConfirmationExist;
     @FXML
     TextField createUserEmailTextField;
 
@@ -26,8 +28,11 @@ public class CreateAccountController extends SuperController {
     TextField createDisplayNameTextField;
 
 
+    //TODO fix restrictions do create all needed now is a username only to create!
+    public void createButtonOnAction(ActionEvent actionEvent) {
+        if (true){
 
-    public void logInButtonOnAction(ActionEvent actionEvent) {
+        }
 
        User user = new User(createUserEmailTextField.getText(),createDisplayNameTextField.getText(),createUserPasswordTextField.getText());
 
@@ -40,6 +45,19 @@ public class CreateAccountController extends SuperController {
 
             Response<User> response = callSync.execute();
 
+           response.message();
+
+            if (response.isSuccessful()){
+
+                labelAccountConfirmationExist.setVisible(true);
+                createDisplayNameTextField.setText("");
+                createUserPasswordTextField.setText("");
+                createUserEmailTextField.setText("");
+            }
+
+
+
+
 //
         }
         catch (Exception e){
@@ -48,7 +66,6 @@ public class CreateAccountController extends SuperController {
         }
 
 
-       // changeScene("lobby.fxml");
 
     }
 
@@ -63,4 +80,6 @@ public class CreateAccountController extends SuperController {
     public void buttonCloseInCreateAccountOnAction(ActionEvent event) {
         getStage().close();
     }
+
+
 }

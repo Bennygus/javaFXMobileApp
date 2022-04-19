@@ -119,4 +119,10 @@ public class Game extends User {
     public boolean checkIfTie(String choiceOne, String choiceTwo) {
         return choiceOne.equals(choiceTwo);
     }
+
+    public boolean checkIfPlayerOneWins(String choiceOne, String choiceTwo) {
+        return (choiceOne.equals(GameChoice.ROCK.toString())&& choiceTwo.equals("Scissor")) || (choiceOne.equals("Paper")&& choiceTwo.equals("Rock")) || (choiceOne.equals("Scissor")&& choiceTwo.equals("Paper"))  ;
+    }
+
+
 }
